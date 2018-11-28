@@ -1,18 +1,14 @@
 ﻿// Patrol.cs
 using UnityEngine;
 using UnityEngine.AI;
-using System.Collections;
-
 
 public class StateMachineWaypoints : MonoBehaviour
 {
-
     public Transform[] points;
     private int destPoint = 0;
     private NavMeshAgent agent;
 
-
-    void Start()
+    private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
 
@@ -24,8 +20,7 @@ public class StateMachineWaypoints : MonoBehaviour
         GotoNextPoint();
     }
 
-
-    void GotoNextPoint()
+    private void GotoNextPoint()
     {
         // Returns if no points have been set up
         if (points.Length == 0)
@@ -39,8 +34,7 @@ public class StateMachineWaypoints : MonoBehaviour
         destPoint = (destPoint + 1) % points.Length;
     }
 
-
-    void Update()
+    private void Update()
     {
         // Choose the next destination point when the agent gets
         // close to the current one.
