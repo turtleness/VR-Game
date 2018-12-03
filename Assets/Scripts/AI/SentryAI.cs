@@ -12,6 +12,7 @@ public class SentryAI : MonoBehaviour
     public bool Idle;
     public bool Patrolling;
     public bool DetectedPlayer;
+    public bool NoticedPlayer;
     private bool facingtarget;
     public float stoppingDistance = 0.5f;
     public float RotationSpeed = 0.2f;
@@ -32,14 +33,15 @@ public class SentryAI : MonoBehaviour
             Patrolling = true;
         }
         else if (DetectedPlayer)
-        {
-            Patrolling = false;
-            agent.isStopped = true;
-            if (!facingtarget)
             {
-                Turn();
+                Patrolling = false;
+                agent.isStopped = true;
+                if (!facingtarget)
+                {
+                    Turn();
+                }
             }
-        }
+        
         else if (Patrolling)
         {
             if (!agent.pathPending && agent.remainingDistance < stoppingDistance)
