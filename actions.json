@@ -36,10 +36,6 @@
       "requirement": "optional"
     },
     {
-      "name": "/actions/default/in/tpad",
-      "type": "vector2"
-    },
-    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },
@@ -116,10 +112,7 @@
       "/actions/buggybuddy/in/Brake": "Brake",
       "/actions/buggybuddy/in/Reset": "Reset",
       "/actions/platformer/in/Move": "Move",
-      "/actions/platformer/in/Jump": "Jump",
-      "/actions/default/in/Move": "Move",
-      "/actions/default/in/Rotate": "Rotate",
-      "/actions/default/in/tpad": "tpad"
+      "/actions/platformer/in/Jump": "Jump"
     }
   ]
 }
