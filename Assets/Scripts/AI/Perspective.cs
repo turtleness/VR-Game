@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class Perspective : Sense
 {
@@ -7,7 +8,9 @@ public class Perspective : Sense
     private Transform playerTrans;
     private Vector3 rayDirection;
     public GameObject Player;
+    float currCountdownValue;
     SentryAI AI;
+    private bool CR_running;
 
     private void Start()
     {
@@ -27,6 +30,26 @@ public class Perspective : Sense
         }
     }
 
+    public IEnumerator StartCountdown(float countdownValue = 0)
+    {
+        currCountdownValue = countdownValue;
+        while (currCountdownValue < 2)
+        {
+            CR_running = true;
+            Debug.Log("Countdown: " + currCountdownValue);
+            yield return new WaitForSeconds(0.1f);
+
+            currCountdownValue += 0.4f;
+            if (currCountdownValue >= 2)
+            {
+                CR_running = false;
+                AI.DetectedPlayer = true;
+                gameObject.GetComponent<Renderer>().material.color = Color.red;
+                Time.timeScale = 1f;
+            }
+        }
+    }
+
     private void DetectAspect()
     {
         RaycastHit hit;
@@ -40,15 +63,47 @@ public class Perspective : Sense
                 Aspect aspect = hit.collider.GetComponent<Aspect>();
                 if (aspect != null)
                 {
+                    print(hit.collider.gameObject);
                     if (aspect.aspectName == aspectName)
                     {
-                        print("Enemy Detected");
-                        gameObject.GetComponent<Renderer>().material.color = Color.red;
-                        AI.DetectedPlayer = true;
+                        
+                        if (CR_running)
+                        {
+                            print("i am waiting 2 seconds");
+
+                        }
+                        else if (CR_running == false & AI.DetectedPlayer == false)
+
+                        {
+                            print("There You are!");
+                            StartCoroutine(StartCountdown());
+                            Time.timeScale = 0.25f;
+                            AI.NoticedPlayer = true;
+                            gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+                        }
                     }
                 }
+                else
+                {
+                    gameObject.GetComponent<Renderer>().material.color = Color.white;
+                    StopAllCoroutines();
+                    CR_running = false;
+                    Time.timeScale = 1f;
+                    print("Hes gone!2");
+                }
             }
+
         }
+
+        else if (AI.NoticedPlayer == true)
+        {
+            gameObject.GetComponent<Renderer>().material.color = Color.white;
+            StopAllCoroutines();
+            Time.timeScale = 1f;
+            CR_running = false;
+            print("Hes gone!2");
+        }
+
     }
 
     private void OnDrawGizmos()
