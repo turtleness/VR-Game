@@ -39,7 +39,7 @@ public class Perspective : Sense
             Debug.Log("Countdown: " + currCountdownValue);
             yield return new WaitForSeconds(0.1f);
 
-            currCountdownValue += 0.4f;
+            currCountdownValue += 0.2f;
             if (currCountdownValue >= 2)
             {
                 CR_running = false;
