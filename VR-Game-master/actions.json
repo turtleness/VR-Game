@@ -117,8 +117,7 @@
       "/actions/buggybuddy/in/Reset": "Reset",
       "/actions/platformer/in/Move": "Move",
       "/actions/platformer/in/Jump": "Jump",
-      "/actions/default/in/tpad": "tpad",
-      "/actions/default/in/touchPad": "touchPad"
+      "/actions/default/in/tpad": "tpad"
     }
   ]
 }

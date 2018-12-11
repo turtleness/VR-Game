@@ -63173,24 +63173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bef7003306afd041b2096f0be38792c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1920651382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1920651380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af3199db73fa4fa4d8fa1e610c1aba82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionSet: {fileID: 11400000, guid: 768f4fd54f1e4854e8390b244ad301db, type: 2}
-  a_move: {fileID: 11400000, guid: bf2855a0b5123794ca8f506c5fc5f4ec, type: 2}
-  Player: {fileID: 1920651380}
-  PlayerPos: {fileID: 1920651385}
-  joyMove: 0.1
-  m_MovingTurnSpeed: 360
-  m_StationaryTurnSpeed: 180
+  player: {fileID: 1920651380}
+  movesp: 1
 --- !u!114 &1920651383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63203,11 +63187,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aspectName: 0
---- !u!4 &1920651385 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9,
-    type: 2}
-  m_PrefabInternal: {fileID: 2117730970}
 --- !u!1 &1921047423
 GameObject:
   m_ObjectHideFlags: 0
