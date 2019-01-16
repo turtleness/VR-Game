@@ -46903,6 +46903,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1434624381}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1435546504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 101548, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 2}
+  m_PrefabInternal: {fileID: 2117730970}
 --- !u!1 &1437399530
 GameObject:
   m_ObjectHideFlags: 0
@@ -63170,16 +63175,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1920651380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d1660a90b3240243abb4fd92297e19e, type: 3}
+  m_Script: {fileID: 11500000, guid: 753021f9b73838149bebd8c83acb5e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchPadAction: {fileID: 11400000, guid: 664529030dec9814a9d90b70050f4f1c, type: 2}
+  TurnRight: {fileID: 11400000, guid: 0cb26a11471f7874aa509ee6716225ef, type: 2}
+  Head: {fileID: 1435546504}
+--- !u!114 &1920651382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1920651380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27991c206a5e66147bb8ee3ef31c8bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   actionSet: {fileID: 11400000, guid: 768f4fd54f1e4854e8390b244ad301db, type: 2}
-  a_move: {fileID: 11400000, guid: bf2855a0b5123794ca8f506c5fc5f4ec, type: 2}
-  Player: {fileID: 1920651380}
-  PlayerPos: {fileID: 2117730971}
-  joyMove: 0.1
-  m_MovingTurnSpeed: 360
-  m_StationaryTurnSpeed: 180
+  disableAllOtherActionSets: 0
+  activateOnStart: 1
+  deactivateOnDestroy: 1
 --- !u!114 &1920651383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70577,11 +70593,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 2}
   m_IsPrefabAsset: 0
---- !u!4 &2117730971 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9,
-    type: 2}
-  m_PrefabInternal: {fileID: 2117730970}
 --- !u!1001 &2120123777
 Prefab:
   m_ObjectHideFlags: 0

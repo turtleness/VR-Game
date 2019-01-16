@@ -89,7 +89,7 @@ public class Perspective : Sense
                     StopAllCoroutines();
                     CR_running = false;
                     Time.timeScale = 1f;
-                    print("Hes gone!2");
+                  //  print("Hes gone!2");
                 }
             }
 

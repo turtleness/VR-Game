@@ -33,6 +33,10 @@ namespace Valve.VR
         
         public Valve.VR.SteamVR_Action_Single Squeeze;
         
-        public Valve.VR.SteamVR_Action_Vector2 touchPad;
+        public Valve.VR.SteamVR_Action_Vector2 TouchpadTouch;
+        
+        public Valve.VR.SteamVR_Action_Boolean TurnRight;
+        
+        public Valve.VR.SteamVR_Action_Boolean TurnLeft;
     }
 }

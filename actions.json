@@ -36,8 +36,16 @@
       "requirement": "optional"
     },
     {
-      "name": "/actions/default/in/touchPad",
+      "name": "/actions/default/in/TouchpadTouch",
       "type": "vector2"
+    },
+    {
+      "name": "/actions/default/in/TurnRight",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/TurnLeft",
+      "type": "boolean"
     },
     {
       "name": "/actions/default/out/Haptic",
