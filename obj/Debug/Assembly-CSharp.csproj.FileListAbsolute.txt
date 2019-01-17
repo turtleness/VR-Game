@@ -1,2 +1,0 @@
-C:\Users\micha\OneDrive\Documents\VR-Game\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
-C:\Users\micha\OneDrive\Documents\VR-Game\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
