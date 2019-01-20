@@ -33,6 +33,7 @@ namespace Valve.VR.InteractionSystem
 
         public float scaleReleaseVelocity = 1.1f;
 
+
 		[Tooltip( "When detaching the object, should it return to its original parent?" )]
 		public bool restoreOriginalParent = false;
 
@@ -166,10 +167,11 @@ namespace Valve.VR.InteractionSystem
         //-------------------------------------------------
         protected virtual void OnDetachedFromHand(Hand hand)
         {
+
             attached = false;
 
             onDetachFromHand.Invoke();
-
+            GameObject.FindGameObjectWithTag("Controller").GetComponent<ControllerInit>().SomethingDetached(gameObject);
             hand.HoverUnlock(null);
             
             rigidbody.interpolation = hadInterpolation;

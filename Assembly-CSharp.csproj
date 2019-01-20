@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{F58A8C27-1E47-D9B7-FB0A-935DFE17A41E}</ProjectGuid>
+    <ProjectGuid>{8BD8A425-6CF6-6F6F-17BD-E4CE3C151F08}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -61,7 +61,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Movement.cs" />
     <Compile Include="Assets\Scripts\AI\Aspect.cs" />
     <Compile Include="Assets\Scripts\AI\Outdated\EnemyKnifeShooting.cs" />
     <Compile Include="Assets\Scripts\AI\Outdated\StateMachineWaypoints.cs" />
@@ -71,9 +70,13 @@
     <Compile Include="Assets\Scripts\AI\Touch.cs" />
     <Compile Include="Assets\Scripts\AI\Wander.cs" />
     <Compile Include="Assets\Scripts\ArtefactSysten\ArtefactStand.cs" />
-    <Compile Include="Assets\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Controller\ControllerInit.cs" />
+    <Compile Include="Assets\Scripts\Inventory\Holster.cs" />
+    <Compile Include="Assets\Scripts\Movement\Movement.cs" />
     <Compile Include="Assets\Scripts\RandomStuff\BeltFollow.cs" />
-    <Compile Include="Assets\Scripts\Sound.cs" />
+    <Compile Include="Assets\Scripts\RandomStuff\Instructions.cs" />
+    <Compile Include="Assets\Scripts\Sound\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Sound\Sound.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_TestThrow.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_TestTrackedCamera.cs" />
@@ -252,10 +255,10 @@
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\SeeThru.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Readme_InteractionSystem.txt" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>H:/Uni/Year3/VrGameTesting/VR-Game/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>F:/Work/Unity/Games/VRGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>H:/Uni/Year3/VrGameTesting/VR-Game/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>F:/Work/Unity/Games/VRGame/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -456,13 +459,13 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Valve.Newtonsoft.Json">
-      <HintPath>H:/Uni/Year3/VrGameTesting/VR-Game/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+      <HintPath>F:/Work/Unity/Games/VRGame/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/micha/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>C:/Users/Administrator/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/micha/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Administrator/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
