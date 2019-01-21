@@ -30,6 +30,16 @@ public class Perspective : Sense
         }
     }
 
+
+
+    public void ResetAI()
+    {
+        AI.Patrolling = true;
+        AI.agent.isStopped = false;
+        AI.DetectedPlayer = false;
+        CR_running = true;
+    }
+
     public IEnumerator StartCountdown(float countdownValue = 0)
     {
         currCountdownValue = countdownValue;
@@ -46,10 +56,10 @@ public class Perspective : Sense
                 AI.DetectedPlayer = true;
                 gameObject.GetComponent<Renderer>().material.color = Color.red;
                 Time.timeScale = 1f;
+                Invoke("ResetAI", 4f);
             }
         }
     }
-
     private void DetectAspect()
     {
         RaycastHit hit;

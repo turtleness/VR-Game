@@ -6,7 +6,7 @@ public class SentryAI : MonoBehaviour
 {
     public Transform[] points;
     private int destPoint = 0;
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
     public GameObject Player;
 
     public bool Idle;
