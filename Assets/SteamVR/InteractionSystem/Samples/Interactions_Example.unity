@@ -29013,6 +29013,7 @@ MonoBehaviour:
   - {fileID: 515215577}
   - {fileID: 2082921270}
   - {fileID: 1509566913}
+  agent: {fileID: 0}
   Player: {fileID: 1547750940}
   Idle: 0
   Patrolling: 0

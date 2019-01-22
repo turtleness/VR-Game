@@ -5,7 +5,9 @@ using UnityEngine;
 public class Holster : MonoBehaviour {
     public GameObject LeftHolster;
     public GameObject RightHolster;
-    public float DistanceToHandCheck = 0.5f;
+    public float DistanceToHandCheck = 0.1f;
+    public GameObject Camera;
+    public float YOffsetOfBelt = 10f;
 
     // Use this for initialization
     void Start () {
@@ -19,6 +21,8 @@ public class Holster : MonoBehaviour {
         item.transform.parent = Holster.transform;
         item.transform.position = Holster.transform.position;
         item.transform.rotation = Holster.transform.rotation;
+        item.GetComponent<Rigidbody>().isKinematic = true;
+        item.GetComponent<Rigidbody>().useGravity = false;
 
 
     }
@@ -39,6 +43,11 @@ public class Holster : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
+       
+
+        Quaternion forward = Camera.transform.rotation;
+        forward.eulerAngles = new Vector3(0, forward.eulerAngles.y, forward.eulerAngles.z); 
+        transform.rotation = forward;
+        transform.position = Camera.transform.position - new Vector3(0,YOffsetOfBelt,0);
 	}
 }

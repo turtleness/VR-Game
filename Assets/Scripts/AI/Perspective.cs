@@ -56,6 +56,7 @@ public class Perspective : Sense
                 AI.DetectedPlayer = true;
                 gameObject.GetComponent<Renderer>().material.color = Color.red;
                 Time.timeScale = 1f;
+               // Player.GetComponent<Movement>().PlayerSpeed = 2f;
                 Invoke("ResetAI", 4f);
             }
         }
@@ -88,6 +89,7 @@ public class Perspective : Sense
                             print("There You are!");
                             StartCoroutine(StartCountdown());
                             Time.timeScale = 0.25f;
+                            Player.GetComponent<Movement>().PlayerSpeed = 8f;
                             AI.NoticedPlayer = true;
                             gameObject.GetComponent<Renderer>().material.color = Color.yellow;
                         }
@@ -99,7 +101,8 @@ public class Perspective : Sense
                     StopAllCoroutines();
                     CR_running = false;
                     Time.timeScale = 1f;
-                  //  print("Hes gone!2");
+                    //Player.GetComponent<Movement>().PlayerSpeed = 2f;
+                    //  print("Hes gone!2");
                 }
             }
 
@@ -110,6 +113,7 @@ public class Perspective : Sense
             gameObject.GetComponent<Renderer>().material.color = Color.white;
             StopAllCoroutines();
             Time.timeScale = 1f;
+           // Player.GetComponent<Movement>().PlayerSpeed = 2f;
             CR_running = false;
             print("Hes gone!2");
         }
