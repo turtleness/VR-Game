@@ -6,7 +6,7 @@ public class Instructions : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Time.timeScale = 0.1f;
+       // Time.timeScale = 0.1f;
 
 		
 	}
