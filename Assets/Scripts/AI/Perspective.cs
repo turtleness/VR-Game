@@ -54,7 +54,7 @@ public class Perspective : Sense
             {
                 CR_running = false;
                 AI.DetectedPlayer = true;
-                gameObject.GetComponent<Renderer>().material.color = Color.red;
+                gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.red;
                 Time.timeScale = 1f;
                // Player.GetComponent<Movement>().PlayerSpeed = 2f;
                 Invoke("ResetAI", 4f);
@@ -91,13 +91,13 @@ public class Perspective : Sense
                             Time.timeScale = 0.25f;
                             Player.GetComponent<Movement>().PlayerSpeed = 8f;
                             AI.NoticedPlayer = true;
-                            gameObject.GetComponent<Renderer>().material.color = Color.yellow;
+                            gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.yellow;
                         }
                     }
                 }
                 else
                 {
-                    gameObject.GetComponent<Renderer>().material.color = Color.white;
+                    gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.white;
                     StopAllCoroutines();
                     CR_running = false;
                     Time.timeScale = 1f;
@@ -110,7 +110,7 @@ public class Perspective : Sense
 
         else if (AI.NoticedPlayer == true)
         {
-            gameObject.GetComponent<Renderer>().material.color = Color.white;
+            gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.white;
             StopAllCoroutines();
             Time.timeScale = 1f;
            // Player.GetComponent<Movement>().PlayerSpeed = 2f;

@@ -16,9 +16,11 @@ public class SentryAI : MonoBehaviour
     private bool facingtarget;
     public float stoppingDistance = 0.5f;
     public float RotationSpeed = 0.2f;
+    private Animator anim;
 
     private void Start()
     {
+        anim = GetComponentInChildren<Animator>();
         Idle = true;
         agent = GetComponent<NavMeshAgent>();
     }
@@ -31,11 +33,13 @@ public class SentryAI : MonoBehaviour
         {
             Idle = false;
             Patrolling = true;
+            anim.SetTrigger("Walk");
         }
         else if (DetectedPlayer)
             {
                 Patrolling = false;
                 agent.isStopped = true;
+            anim.SetBool("SawEnemy",true);
                 if (!facingtarget)
                 {
                     Turn();
