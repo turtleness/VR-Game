@@ -60,9 +60,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1821
+    x: 2070
     y: 0
-    width: 739
+    width: 490
     height: 1307
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
@@ -88,8 +88,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 558
-    height: 808
+    width: 379
+    height: 1035
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 20}
@@ -114,9 +114,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 808
-    width: 1821
-    height: 499
+    y: 1035
+    width: 2070
+    height: 272
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 18}
@@ -207,7 +207,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1821
+    width: 2070
     height: 1307
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
@@ -231,8 +231,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1821
-    height: 808
+    width: 2070
+    height: 1035
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
@@ -251,10 +251,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 558
+    x: 379
     y: 0
-    width: 1263
-    height: 808
+    width: 1691
+    height: 1035
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 21}
@@ -478,9 +478,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 900
-    width: 1819
-    height: 478
+    y: 1127
+    width: 2068
+    height: 251
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -494,20 +494,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/SteamVR/Prefabs
+    - Assets/SteamVR/Models/Materials
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/SteamVR/Prefabs
+  - Assets/SteamVR/Models/Materials
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Projects\VR-Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 711}
-    m_SelectedIDs: ea390000
-    m_LastClickedID: 14826
-    m_ExpandedIDs: 000000007837000002380000a8380000b0390000cc390000fc390000b43a0000463e0000763e0000ea3e00002a3f000000ca9a3b
+    scrollPos: {x: 0, y: 938}
+    m_SelectedIDs: 580f0000
+    m_LastClickedID: 3928
+    m_ExpandedIDs: 00000000820a0000180b0000c40b0000660f00008a0f0000ca0f0000a0100000aa140000e614000068150000b015000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -535,7 +535,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007837000002380000a8380000b0390000cc390000fc390000b43a0000463e0000763e0000ea3e00002a3f0000
+    m_ExpandedIDs: 00000000820a0000180b0000c40b0000660f00008a0f0000ca0f0000a0100000aa140000e614000068150000b0150000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -610,9 +610,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1823
+    x: 2072
     y: 92
-    width: 737
+    width: 488
     height: 1286
   m_PersistentViewDataDictionary: {fileID: 0}
   m_ObjectsLockedBeforeSerialization: []
@@ -646,14 +646,14 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 92
-    width: 556
-    height: 787
+    width: 377
+    height: 1014
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 32}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 1af0feffcef0feff92b3ffff00000000cc410000a0450000ae5300009a580000825d0000
+    scrollPos: {x: 0, y: 5563}
+    m_SelectedIDs: 9c170000
+    m_LastClickedID: 6044
+    m_ExpandedIDs: 285fffff2a5fffff2e5fffff305fffff525fffff565fffffca5fffffcc5fffff88f1ffffbef2ffff40f6ffff56f7ffff28f9ffffbefbffffc2fbffffc4fbffffe6fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -697,10 +697,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 560
+    x: 381
     y: 92
-    width: 1259
-    height: 787
+    width: 1687
+    height: 1014
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 0
   lastFramingTime: 16108.915080419243
@@ -708,9 +708,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.45838583, y: 7.0322986, z: -25.82832}
+    m_Target: {x: -5.3121367, y: 1.8606508, z: 9.852368}
     speed: 2
-    m_Value: {x: -0.45838583, y: 7.0322986, z: -25.82832}
+    m_Value: {x: -5.3121367, y: 1.8606508, z: 9.852368}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -738,9 +738,9 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.05578394, y: 0.047927104, z: -0.00267913, w: 0.99728835}
+    m_Target: {x: -0.02882138, y: 0.06299213, z: -0.0018207469, w: -0.99759614}
     speed: 2
-    m_Value: {x: 0.05578394, y: 0.047927104, z: -0.00267913, w: 0.99728835}
+    m_Value: {x: -0.02882138, y: 0.06299213, z: -0.0018207469, w: -0.99759614}
   m_Size:
     m_Target: 1.5440266
     speed: 2
