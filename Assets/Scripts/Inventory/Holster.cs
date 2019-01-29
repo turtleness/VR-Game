@@ -8,6 +8,8 @@ public class Holster : MonoBehaviour {
     public float DistanceToHandCheck = 0.1f;
     public GameObject Camera;
     public float YOffsetOfBelt = 10f;
+    private Vector3 oldscale;
+    private bool equiped;
 
     // Use this for initialization
     void Start () {
@@ -29,13 +31,17 @@ public class Holster : MonoBehaviour {
 
     public void ItemDropped(GameObject item)
     {
+
         if (Vector3.Distance(item.transform.position, LeftHolster.transform.position) <= DistanceToHandCheck)
         {
+            oldscale = item.transform.localScale;
             attachObjectToHand(item, LeftHolster);
+         
 
         }
         else if (Vector3.Distance(item.transform.position, RightHolster.transform.position) <= DistanceToHandCheck)
         {
+            oldscale = item.transform.localScale;
             attachObjectToHand(item, RightHolster);
         }
     }

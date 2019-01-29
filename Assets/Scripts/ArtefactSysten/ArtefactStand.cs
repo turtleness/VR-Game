@@ -57,6 +57,7 @@ public class ArtefactStand : MonoBehaviour {
 
     public void AttachToSocket()
     {
+
         print("fucntion is being called");
         Collider[] hitColliders = Physics.OverlapSphere(centersocket.position, 1);
         int i = 0;

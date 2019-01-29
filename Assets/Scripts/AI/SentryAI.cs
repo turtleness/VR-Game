@@ -16,7 +16,7 @@ public class SentryAI : MonoBehaviour
     private bool facingtarget;
     public float stoppingDistance = 0.5f;
     public float RotationSpeed = 0.2f;
-    private Animator anim;
+    public Animator anim;
 
     private void Start()
     {

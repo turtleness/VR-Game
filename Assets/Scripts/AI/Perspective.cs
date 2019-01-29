@@ -37,6 +37,9 @@ public class Perspective : Sense
         AI.agent.isStopped = false;
         AI.DetectedPlayer = false;
         CR_running = true;
+        AI.anim.SetTrigger("Reseted");
+
+
     }
 
     public IEnumerator StartCountdown(float countdownValue = 0)
@@ -54,7 +57,7 @@ public class Perspective : Sense
                 Time.timeScale = 1f;
                 print("I am Running");
                 // Player.GetComponent<Movement>().PlayerSpeed = 2f;
-                //Invoke("ResetAI", 4f);
+                Invoke("ResetAI", 4f);
             }
         }
     }
@@ -94,7 +97,7 @@ public class Perspective : Sense
                     print("There You are!");
                     StartCoroutine(StartCountdown());
                     Time.timeScale = 0.25f;
-                    Player.GetComponentInParent<Movement>().PlayerSpeed = 8f;
+                  //  Player.GetComponentInParent<Movement>().PlayerSpeed = 8f;
                     AI.NoticedPlayer = true;
                 }
             }
