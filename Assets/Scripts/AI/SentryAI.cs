@@ -25,8 +25,6 @@ public class SentryAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
     }
 
-
-
     private void Update()
     {
         if (Idle)
@@ -36,16 +34,15 @@ public class SentryAI : MonoBehaviour
             anim.SetTrigger("Walk");
         }
         else if (DetectedPlayer)
+        {
+            Patrolling = false;
+            agent.isStopped = true;
+            anim.SetBool("SawEnemy", true);
+            if (!facingtarget)
             {
-                Patrolling = false;
-                agent.isStopped = true;
-            anim.SetBool("SawEnemy",true);
-                if (!facingtarget)
-                {
-                    Turn();
-                }
+                Turn();
             }
-        
+        }
         else if (Patrolling)
         {
             if (!agent.pathPending && agent.remainingDistance < stoppingDistance)
@@ -57,7 +54,6 @@ public class SentryAI : MonoBehaviour
         {
             return;
         }
-    
     }
 
     private void GotoNextPoint()
@@ -82,6 +78,4 @@ public class SentryAI : MonoBehaviour
             facingtarget = false;
         }
     }
-
-
 }
