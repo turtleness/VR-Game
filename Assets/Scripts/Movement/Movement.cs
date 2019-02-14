@@ -61,22 +61,40 @@ public class Movement : MonoBehaviour
 
 
         Vector2 touchpad = (touchPadAction.GetAxis(SteamVR_Input_Sources.Any));
-            if (touchpad.y > 0.7f)
-            {
+        if (touchpad.y > 0.4f)
+        {
+            // move forward
             Vector3 forward = Head.transform.forward;
             forward.y = 0;
-            rb.velocity = (forward * PlayerSpeed *Time.deltaTime);
+            rb.velocity = (forward * PlayerSpeed * Time.deltaTime);
             print(rb.velocity);
 
         }
 
-            else if (touchpad.y < -0.7f)
-            {
+        else if (touchpad.y < -0.4f)
+        {
+            // move backwards
             Vector3 forward = Head.transform.forward;
             forward.y = 0;
-            rb.velocity = ((forward * PlayerSpeed * Time.deltaTime)*-1);
+            rb.velocity = ((forward * PlayerSpeed * Time.deltaTime) * -1);
             print(rb.velocity);
         }
+        else if (touchpad.x > 0.4f)
+        {
+            //move left
+            Vector3 forward = Head.transform.right;
+            forward.y = 0;
+            rb.velocity = ((forward * PlayerSpeed * Time.deltaTime ));
+            print(rb.velocity);
+        }
+        else if (touchpad.x < -0.4f)
+        {
+            //move right
+            Vector3 forward = Head.transform.right;
+            forward.y = 0;
+            rb.velocity = ((forward * PlayerSpeed * Time.deltaTime) * -1);
+            print(rb.velocity);
+        }       
         else
         {
             rb.velocity = new Vector3(0, 0, 0);

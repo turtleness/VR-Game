@@ -61,12 +61,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Scripts\DoorScript.cs" />
-    <Compile Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Scripts\KeyScript.cs" />
-    <Compile Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Scripts\LightAnimation.cs" />
-    <Compile Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Scripts\LightRays.cs" />
-    <Compile Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Scripts\ParticlesAutoColor.cs" />
-    <Compile Include="Assets\NOT_Lonely\Object Placement Tool\NL_PhysicsPlacer.cs" />
     <Compile Include="Assets\Scripts\AI\Aspect.cs" />
     <Compile Include="Assets\Scripts\AI\Outdated\EnemyKnifeShooting.cs" />
     <Compile Include="Assets\Scripts\AI\Outdated\StateMachineWaypoints.cs" />
@@ -249,35 +243,18 @@
     <Compile Include="Assets\SteamVR_Input\ActionObjects\SteamVR_Input_ActionSet_platformer_In.cs" />
     <Compile Include="Assets\SteamVR_Input\SteamVR_Input_Actions.cs" />
     <Compile Include="Assets\SteamVR_Input\SteamVR_Input_ActionSets.cs" />
-    <None Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Shaders\NOT_Lonely_Cobweb.shader" />
-    <None Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Shaders\NOT_Lonely_VertexBlend.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
-    <None Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Shaders\NOT_Lonely_ParticlesCutout.shader" />
-    <None Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Shaders\NOT_Lonely_LightRays.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_ClearAll.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Hints\Shaders\ControllerButtonHints.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Samples\BuggyBuddy\Materials\LightCone.shader" />
-    <None Include="Assets\NOT_Lonely\HQ_AbandonedSchool\ReadMe.txt" />
     <None Include="Assets\SteamVR\InteractionSystem\Teleport\Shaders\Highlight.shader" />
-    <None Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Shaders\NOT_Lonely_Trees_LOD.shader" />
-    <None Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Shaders\NOT_Lonely_Billboard.shader" />
-    <None Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Shaders\NOT_Lonely_Decals.shader" />
-    <None Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Shaders\NOT_Lonely_Sky.shader" />
-    <None Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Shaders\NOT_Lonely_WorldSpaceMapping.shader" />
-    <None Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Shaders\NOT_Lonely_MaskedPBR.shader" />
-    <None Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Shaders\NOT_Lonely_PBR_Decals.shader" />
-    <None Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Shaders\NOT_Lonely_Grass.shader" />
-    <None Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Shaders\NOT_Lonely_Trees.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Teleport\Shaders\HighlighGlobal.shader" />
-    <None Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Shaders\NOT_Lonely_VertexAnim.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_AlphaOut.shader" />
-    <None Include="Assets\NOT_Lonely\Object Placement Tool\Readme.txt" />
     <None Include="Assets\SteamVR\readme.txt" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\Silhouette.shader" />
     <None Include="Assets\SteamVR\Resources\SteamVR_ColorOut.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\SeeThru.shader" />
-    <None Include="Assets\NOT_Lonely\HQ_AbandonedSchool\Shaders\NOT_Lonely_Tesselation.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Readme_InteractionSystem.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/VRGame3/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

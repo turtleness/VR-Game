@@ -138,6 +138,7 @@ namespace Valve.VR.InteractionSystem
         protected virtual void OnAttachedToHand( Hand hand )
 		{
             //Debug.Log("Pickup: " + hand.GetGrabStarting().ToString());
+            GameObject.FindGameObjectWithTag("Controller").GetComponent<ControllerInit>().SomethingAttached(gameObject);
 
             hadInterpolation = this.rigidbody.interpolation;
 

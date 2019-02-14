@@ -19,4 +19,9 @@ public class ControllerInit : MonoBehaviour {
         Holster.GetComponent<Holster>().ItemDropped(item);
 
     }
+    public void SomethingAttached(GameObject item)
+    {
+        Holster.GetComponent<Holster>().ItemPickedup(item);
+
+    }
 }
