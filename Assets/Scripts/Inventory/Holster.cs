@@ -32,11 +32,18 @@ public class Holster : MonoBehaviour {
             rightsocketeditem = item;
         }
 
-        item.transform.parent = Holster.transform;
+    //    item.transform.parent = Holster.transform;
         item.transform.position = Holster.transform.position;
         item.transform.rotation = Holster.transform.rotation;
         item.GetComponent<Rigidbody>().isKinematic = true;
         item.GetComponent<Rigidbody>().useGravity = false;
+        InvokeRepeating("Attachupdate", 0, 0.02f);
+    }
+
+    public void Attachupdate(GameObject item, GameObject Holster)
+    {
+        item.transform.position = Holster.transform.position;
+        item.transform.rotation = Holster.transform.rotation;
     }
 
     public void RemoveObjectFromHolster(GameObject item)
@@ -56,13 +63,13 @@ public class Holster : MonoBehaviour {
         {
             RemoveObjectFromHolster(item);
             leftsocketeditem = null;
-            item.transform.localScale = leftoldscale;
+          //  item.transform.localScale = leftoldscale;
         }
         else if (item == rightsocketeditem)
         {
             RemoveObjectFromHolster(item);
             rightsocketeditem = null;
-            item.transform.localScale = rightoldscale;
+        //    item.transform.localScale = rightoldscale;
         }
     }
 
@@ -71,14 +78,14 @@ public class Holster : MonoBehaviour {
 
         if (Vector3.Distance(item.transform.position, LeftHolster.transform.position) <= DistanceToHandCheck)
         {
-            leftoldscale = item.transform.localScale;
+      //      leftoldscale = item.transform.localScale;
             AttackObjectToHolster(item, LeftHolster);
          
 
         }
         else if (Vector3.Distance(item.transform.position, RightHolster.transform.position) <= DistanceToHandCheck)
         {
-            rightoldscale = item.transform.localScale;
+     //       rightoldscale = item.transform.localScale;
             AttackObjectToHolster(item, RightHolster);
         }
     }
