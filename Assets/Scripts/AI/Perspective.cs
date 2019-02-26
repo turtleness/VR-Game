@@ -5,7 +5,7 @@ public class Perspective : Sense
 {
     public int FieldOfViewLeft;
     public int FieldOfViewRight;
-    public int ViewDistance = 100;
+    public int ViewDistance = 5;
     private Transform playerTrans;
     private Vector3 rayDirection;
     public GameObject Player;

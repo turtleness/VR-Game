@@ -12,6 +12,10 @@ public class Tutorial : MonoBehaviour {
     private Transform playertrans;
     public GameObject bluezone;
     public GameObject tutorial;
+    public GameObject flashlight;
+    public GameObject instructions;
+    public GameObject altar;
+    public GameObject options;
 
 
     //movement start
@@ -38,11 +42,15 @@ public class Tutorial : MonoBehaviour {
     // movement end
 
 
+
+
     private bool Taskcomplete = false;
 
 
     // Use this for initialization
     void Start () {
+        tutorial.SetActive(true);
+        gameObject.GetComponent<Movement>().enabled = false;
         MainText.text = ("Welcome to the VR Horror Game");
         Invoke("NextText",5);
 
@@ -152,21 +160,29 @@ public class Tutorial : MonoBehaviour {
 
                     break;
                 case 6:
+                    flashlight.SetActive(true);
                     break;
                 case 7:
+                    Invoke("EndTutorial", 6f);
+
                     break;
-                case 8:
-                    tutorial.SetActive(false);
-                    gameObject.GetComponent<Movement>().enabled = true;
-                    gameObject.GetComponent<Tutorial>().enabled = false;
-                    break;
+
+
             }
         }
 
     }
 
 
-
+    private void EndTutorial()
+    {
+        tutorial.SetActive(false);
+        altar.SetActive(true);
+        instructions.SetActive(true);
+        options.SetActive(true);
+        gameObject.GetComponent<Movement>().enabled = true;
+        gameObject.GetComponent<Tutorial>().enabled = false;
+    }
 
     public void NextText()
     {
@@ -199,13 +215,10 @@ public class Tutorial : MonoBehaviour {
                 MainText.text = ("Please Rotate to the right: press the middle of your trackpad on your right controller");
                 break;
             case 6:
-                MainText.text = ("Now crouch in real life and pickup the ball that is on the floor with your trigger(point) finger. ");
+                MainText.text = ("Now crouch in real life and pickup the flashlight that is on the floor with your trigger(point) finger to end the tutorial. ");
                 break;
             case 7:
-                MainText.text = ("Now throw it by releasing your trigger finger whilst flinging.  ");
-                break;
-            case 8:
-                MainText.text = ("You now know the basics, goodluck!  ");
+                MainText.text = ("You now know the basics, goodluck!  Go ahead and choose your preffered movement type in the corner. ");
                 break;
         }
 

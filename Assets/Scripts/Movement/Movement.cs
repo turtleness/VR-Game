@@ -53,19 +53,20 @@ public class Movement : MonoBehaviour
         if (Physics.Raycast(HeightChecker.position, transform.TransformDirection(Vector3.down), out Hit, Mathf.Infinity,layerMask))
         {
 
-            if (Hit.distance < Height - 0.06f & Hit.distance > Height - 0.4f)
+            if (Hit.distance != 0.7f )
             {
+                transform.position = new Vector3(transform.position.x, (Hit.point.y), transform.position.z);
               //  transform.position += new Vector3(0, 0.1f, 0);
-                transform.position = new Vector3(transform.position.x, Hit.transform.position.y, transform.position.z); 
-                print(Hit.distance);
+            //    transform.position = new Vector3(transform.position.x, Hit.transform.position.y, transform.position.z); 
             }
-            else if (Hit.distance > Height + 0.05f)
-            {
-                transform.position -= new Vector3(0, 0.1f, 0);
-                print(Hit.distance);
-            }
+      //      else if (Hit.distance > Height + 0.05f)
+       //     {
+      //          transform.position -= new Vector3(0, 0.1f, 0);
+                
+       //     }
         }
-
+        Debug.DrawLine(HeightChecker.position, Hit.point, Color.yellow);
+        print(Hit.distance);
 
 
         if (SteamVR_Input._default.inActions.TurnRight.GetStateDown(SteamVR_Input_Sources.Any))
@@ -77,7 +78,6 @@ public class Movement : MonoBehaviour
         {
             transform.Rotate(0, -20, 0);
         }
-        Debug.DrawLine(HeightChecker.position, Hit.point, Color.yellow);
 
 
 
