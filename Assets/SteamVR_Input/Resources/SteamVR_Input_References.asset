@@ -15,13 +15,14 @@ MonoBehaviour:
   - _default
   - platformer
   - buggy
+  - VRGame
   actionSetObjects:
   - {fileID: 11400000, guid: 768f4fd54f1e4854e8390b244ad301db, type: 2}
   - {fileID: 11400000, guid: 21610d4ec86e37a4498d311b450c1740, type: 2}
   - {fileID: 11400000, guid: b06c35eb72b040c4ab923a4a02767cc9, type: 2}
+  - {fileID: 11400000, guid: 3e65729f86918cd42b37a95002c5da12, type: 2}
   actionNames:
   - __actions_default_in_InteractUI
-  - __actions_default_in_Teleport
   - __actions_default_in_GrabPinch
   - __actions_default_in_GrabGrip
   - __actions_default_in_Pose
@@ -40,7 +41,6 @@ MonoBehaviour:
   - __actions_buggy_in_Reset
   actionObjects:
   - {fileID: 11400000, guid: 3195e0bcdfa9efa49a7d8165b10a36c7, type: 2}
-  - {fileID: 11400000, guid: 4380c44ad43076146abbb401044a6881, type: 2}
   - {fileID: 11400000, guid: 6a925a3a47d7e9440a96e02f25357f19, type: 2}
   - {fileID: 11400000, guid: 1772379eeb7a7df48a685b1fa4a7f5f1, type: 2}
   - {fileID: 11400000, guid: 57c93f7be2a4c8349bb1b85ca8113f71, type: 2}

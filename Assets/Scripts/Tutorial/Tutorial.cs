@@ -39,6 +39,8 @@ public class Tutorial : MonoBehaviour {
     public float maxVelocityChange = 10.0f;
     public float speed = 5.0f;
     SteamVR_TrackedObject trackedObj;
+    public SteamVR_ActionSet actionSetdefault;
+
     // movement end
 
 
@@ -47,8 +49,10 @@ public class Tutorial : MonoBehaviour {
     private bool Taskcomplete = false;
 
 
+
     // Use this for initialization
     void Start () {
+        actionSetdefault.ActivatePrimary();
         tutorial.SetActive(true);
         gameObject.GetComponent<Movement>().enabled = false;
         MainText.text = ("Welcome to the VR Horror Game");

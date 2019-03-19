@@ -5,10 +5,6 @@
       "type": "boolean"
     },
     {
-      "name": "/actions/default/in/Teleport",
-      "type": "boolean"
-    },
-    {
       "name": "/actions/default/in/GrabPinch",
       "type": "boolean"
     },
@@ -88,6 +84,10 @@
     {
       "name": "/actions/buggy",
       "usage": "single"
+    },
+    {
+      "name": "/actions/VRGame",
+      "usage": "single"
     }
   ],
   "default_bindings": [
@@ -125,7 +125,8 @@
       "/actions/buggybuddy/in/Reset": "Reset",
       "/actions/platformer/in/Move": "Move",
       "/actions/platformer/in/Jump": "Jump",
-      "/actions/default/in/tpad": "tpad"
+      "/actions/default/in/tpad": "tpad",
+      "/actions/default/in/TurnRight": "Turn Right"
     }
   ]
 }

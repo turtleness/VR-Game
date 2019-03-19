@@ -19,8 +19,6 @@ namespace Valve.VR
         
         public Valve.VR.SteamVR_Action_Boolean InteractUI;
         
-        public Valve.VR.SteamVR_Action_Boolean Teleport;
-        
         public Valve.VR.SteamVR_Action_Boolean GrabPinch;
         
         public Valve.VR.SteamVR_Action_Boolean GrabGrip;
