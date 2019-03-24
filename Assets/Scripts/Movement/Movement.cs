@@ -33,7 +33,6 @@ public class Movement : MonoBehaviour
     public SteamVR_ActionSet actionSetdefault;
     public GameObject Flash;
 
-
     public void ChangeMovement(GameObject Objectchosen)
     {
         CurrentMovementType = Objectchosen;

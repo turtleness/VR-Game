@@ -2,76 +2,61 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+
 public class SentryAI : MonoBehaviour
 {
-    public Transform[] points;
-    private int destPoint = 0;
     public NavMeshAgent agent;
     public GameObject Player;
 
     public bool Idle;
-    public bool Patrolling;
+    public bool ApproachPlayer;
     public bool DetectedPlayer;
     public bool NoticedPlayer;
     private bool facingtarget;
     public float stoppingDistance = 0.5f;
     public float RotationSpeed = 0.2f;
     public Animator anim;
+    private float playerstarty;
 
     private void Start()
     {
         anim = GetComponentInChildren<Animator>();
-        Idle = true;
         agent = GetComponent<NavMeshAgent>();
     }
 
+
     private void Update()
     {
-        if (Idle)
+
+        if (DetectedPlayer)
         {
-            Idle = false;
-            Patrolling = true;
             anim.SetTrigger("Walk");
-        }
-        else if (DetectedPlayer)
-        {
-            Patrolling = false;
-            agent.isStopped = true;
-            anim.SetBool("SawEnemy", true);
+            GoToPlayer();
             if (!facingtarget)
             {
-                Turn();
-            }
+                Turn(Player.transform.position);
+            }    
         }
-        else if (Patrolling)
+        else if (Idle)
         {
-            if (!agent.pathPending && agent.remainingDistance < stoppingDistance)
-            {
-                GotoNextPoint();
-            }
-        }
-        else
-        {
-            return;
         }
     }
 
-    private void GotoNextPoint()
+    private void GoToPlayer()
     {
-        if (points.Length == 0)
-            return;
-        agent.destination = points[destPoint].position;
-        destPoint = (destPoint + 1) % points.Length;
+        agent.destination = new Vector3(Player.transform.position.x, 0, Player.transform.position.z);       
     }
 
-    public void Turn()
+    public void Turn(Vector3 Location)
     {
-        Vector3 targetDir = Player.transform.position - transform.position;
+        Vector3 targetDir = Location - transform.position;
         Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, RotationSpeed * Time.deltaTime, 0.0F);
-        transform.rotation = Quaternion.LookRotation(newDir);
+        // newDir.x = 0;
+        transform.rotation = Quaternion.LookRotation(newDir.normalized);
         if (Vector3.Angle(newDir, targetDir) < 5f)
         {
             facingtarget = true;
+    
         }
         else
         {
