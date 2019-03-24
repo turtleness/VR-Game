@@ -30,8 +30,8 @@ TagManager:
   - Walkable
   - PlayerBody
   - Objects
-  - 
-  - 
+  - InvisibleEnemy
+  - Enemy
   - 
   - 
   - 

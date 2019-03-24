@@ -17,6 +17,7 @@ public class SentryAI : MonoBehaviour
     public float RotationSpeed = 0.2f;
     public Animator anim;
     private float playerstarty;
+    public bool MoveToplayer;
 
     private void Start()
     {
@@ -24,14 +25,16 @@ public class SentryAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
     }
 
-
     private void Update()
     {
-
         if (DetectedPlayer)
-        {
-            anim.SetTrigger("Walk");
-            GoToPlayer();
+        {     
+            if (MoveToplayer)
+            {
+                anim.SetTrigger("Walk");
+                GoToPlayer();
+            }
+
             if (!facingtarget)
             {
                 Turn(Player.transform.position);
@@ -44,7 +47,22 @@ public class SentryAI : MonoBehaviour
 
     private void GoToPlayer()
     {
-        agent.destination = new Vector3(Player.transform.position.x, 0, Player.transform.position.z);       
+        agent.destination = new Vector3(Player.transform.position.x, 0, Player.transform.position.z);
+        agent.isStopped = false;
+        //if (agent.remainingDistance < stoppingDistance)
+        //{
+        //    MoveToplayer = false;
+        //    print("stop");
+        //    agent.isStopped = true;
+        //    Player.GetComponentInParent<Movement>().KillPlayer(gameObject, gameObject.GetComponentInChildren<ObjectTaker>().gameObject);
+
+        //    //anim.SetBool("SawEnemy",true);
+        //}
+        //else
+        //{
+        //    agent.isStopped = false;
+        //}
+
     }
 
     public void Turn(Vector3 Location)

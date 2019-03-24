@@ -44,6 +44,7 @@ public class Perspective : Sense
 
     private void PlayerDetected() {
         AI.DetectedPlayer = true;
+        AI.MoveToplayer = true;
         gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.red;
         print("detected");
 

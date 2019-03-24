@@ -39,6 +39,14 @@ public class Movement : MonoBehaviour
     }
 
 
+
+    public void KillPlayer(GameObject Enemy, GameObject EnemyFace)
+    {
+        Enemy.GetComponent<SentryAI>().enabled = false;
+        Enemy.transform.position = gameObject.transform.position - new Vector3(1, 1, 1);
+
+    }
+
     //public void turnrightwithcontroller(SteamVR_Action_In action_In)
     //{
     //    if (TurnRight.GetStateDown(inputSource) == true)
