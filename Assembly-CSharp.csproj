@@ -66,6 +66,7 @@
     <Compile Include="Assets\Deform\MeshDeformerInput.cs" />
     <Compile Include="Assets\Deform\RoundedCube.cs" />
     <Compile Include="Assets\ObjectTaker.cs" />
+    <Compile Include="Assets\ReturnObject.cs" />
     <Compile Include="Assets\Scripts\AI\Aspect.cs" />
     <Compile Include="Assets\Scripts\AI\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\AI\Outdated\EnemyKnifeShooting.cs" />
@@ -269,8 +270,20 @@
     <None Include="Assets\SteamVR\Resources\SteamVR_ColorOut.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\SeeThru.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Readme_InteractionSystem.txt" />
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>F:/Work/Unity/Games/VRGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>F:/Work/Unity/Games/VRGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>F:/Work/Unity/Games/VRGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Lightweight.Runtime">
+      <HintPath>F:/Work/Unity/Games/VRGame/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Lightweight.Editor">
+      <HintPath>F:/Work/Unity/Games/VRGame/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>F:/Work/Unity/Games/VRGame/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
@@ -283,18 +296,6 @@
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>F:/Work/Unity/Games/VRGame/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>F:/Work/Unity/Games/VRGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>F:/Work/Unity/Games/VRGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Lightweight.Runtime">
-      <HintPath>F:/Work/Unity/Games/VRGame/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Lightweight.Editor">
-      <HintPath>F:/Work/Unity/Games/VRGame/Library/ScriptAssemblies/Unity.RenderPipelines.Lightweight.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.IncludePaths">
       <HintPath>F:/Work/Unity/Games/VRGame/Library/ScriptAssemblies/Unity.RenderPipelines.Core.IncludePaths.dll</HintPath>

@@ -11,7 +11,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        SpawnEnemies();
 	}
 
 

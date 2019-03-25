@@ -40,10 +40,10 @@ public class Movement : MonoBehaviour
 
 
 
-    public void KillPlayer(GameObject Enemy, GameObject EnemyFace)
+    public void KillPlayer(GameObject Enemy, GameObject EnemyFace,GameObject mainCamera)
     {
         Enemy.GetComponent<SentryAI>().enabled = false;
-        Enemy.transform.position = gameObject.transform.position - new Vector3(1, 1, 1);
+       // Enemy.transform.position = gameObject.transform.position - new Vector3(1, 1, 1);
 
     }
 
