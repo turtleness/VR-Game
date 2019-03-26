@@ -12,7 +12,7 @@ public class Tutorial : MonoBehaviour {
     private Transform playertrans;
     public GameObject bluezone;
     public GameObject tutorial;
-    public GameObject flashlight;
+   // public GameObject flashlight;
     public GameObject instructions;
     public GameObject altar;
     public GameObject options;
@@ -52,6 +52,8 @@ public class Tutorial : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Invoke("EndTutorial", 5f);
+
         actionSetdefault.ActivatePrimary();
         tutorial.SetActive(true);
         gameObject.GetComponent<Movement>().enabled = false;
@@ -164,7 +166,7 @@ public class Tutorial : MonoBehaviour {
 
                     break;
                 case 6:
-                    flashlight.SetActive(true);
+             //       flashlight.SetActive(true);
                     break;
                 case 7:
                     Invoke("EndTutorial", 6f);

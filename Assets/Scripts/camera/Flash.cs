@@ -12,40 +12,56 @@ public class Flash : MonoBehaviour {
     public GameObject[] Enemies;
     private GameObject[] EnemyList;
     public EnemySpawner enemyspawner;
+    private bool Picturetaken = false;
 
 
     // Use this for initialization
     void Start () {
-        
-}
+    }
     private void FixedUpdate()
     {
-        Debug.DrawRay(Playerhead.transform.position, Playerhead.transform.forward* 10);
     }
+
+
+
+
+    private void Resetpicturetaken()
+    {
+        Picturetaken = false;
+    }
+
 
     public void Firstbitoflight()
     {
-        foreach (GameObject item in Enemies)
+
+        if (Picturetaken == false)
         {
-            
-            Vector3 screenPoint = gameObject.GetComponent<Camera>().WorldToViewportPoint(item.transform.position);
-            bool onScreen = screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
-            RaycastHit Hit;
-            if (onScreen == true)
+            Invoke("Resetpicturetaken", 3);
+            Picturetaken = true;
+
+            foreach (GameObject item in Enemies)
             {
-                if (Physics.Raycast(transform.position, item.transform.position - transform.position, out Hit, 100, layerMask))
+
+                Vector3 screenPoint = gameObject.GetComponent<Camera>().WorldToViewportPoint(item.transform.position);
+                bool onScreen = screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
+                RaycastHit Hit;
+                if (onScreen == true)
                 {
-                    if (Hit.collider.tag == "Enemy")
+                    if (Physics.Raycast(transform.position, item.transform.position - transform.position, out Hit, 100, layerMask))
                     {
-                        enemyspawner.RelocateEnemy(Hit.collider.gameObject);
+                        if (Hit.collider.tag == "Enemy")
+                        {
+                            enemyspawner.RelocateEnemy(Hit.collider.gameObject);
+                        }
                     }
                 }
             }
-        }
 
-        iterations = 0;
-        myLight.enabled = !myLight.enabled;
-        Invoke("Secondbitoflight", minTime);
+            iterations = 0;
+            myLight.enabled = !myLight.enabled;
+            Invoke("Secondbitoflight", minTime);
+
+        }
         
     }
     

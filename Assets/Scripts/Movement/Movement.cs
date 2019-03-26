@@ -111,7 +111,7 @@ public class Movement : MonoBehaviour
     }
 
 
-    private void Update()
+    private void FixedUpdate()
     {
         CurrentPosition = transform;
         RaycastHit Hit;
@@ -154,16 +154,17 @@ public class Movement : MonoBehaviour
             // move forward
             Vector3 forward = CurrentMovementType.transform.forward;
             forward.y = 0;
+            forward.Normalize();
 
             rb.velocity = (forward * PlayerSpeed * Time.deltaTime);
-            rb.velocity.Normalize();
-            print("forward pressed" + rb.velocity);
+          //  rb.velocity.Normalize();
         }
         else if (touchpad.y < -0.4f)
         {
             // move backwards
             Vector3 forward = CurrentMovementType.transform.forward;
             forward.y = 0;
+            forward.Normalize();
             rb.velocity = ((forward * PlayerSpeed * Time.deltaTime) * -1);
 
         }
@@ -172,6 +173,7 @@ public class Movement : MonoBehaviour
             //move left
             Vector3 forward = CurrentMovementType.transform.right;
             forward.y = 0;
+            forward.Normalize();
             rb.velocity = ((forward * PlayerSpeed * Time.deltaTime));
 
         }
@@ -180,6 +182,7 @@ public class Movement : MonoBehaviour
             //move right
             Vector3 forward = CurrentMovementType.transform.right;
             forward.y = 0;
+            forward.Normalize();
             rb.velocity = ((forward * PlayerSpeed * Time.deltaTime) * -1);
 
         }
