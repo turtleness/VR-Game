@@ -42,13 +42,7 @@ public class Perspective : Sense
         AI.Idle = true;
     }
 
-    private void PlayerDetected() {
-        AI.DetectedPlayer = true;
-        AI.MoveToplayer = true;
-        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = Color.red;
-        print("detected");
 
-    }
         
 
     private void DetectPlayer()
@@ -61,7 +55,8 @@ public class Perspective : Sense
             if (hit.collider.tag == "Player")
             {
                 detected = true;
-                PlayerDetected();
+                AI.PlayerDetected();
+
             }
 
         }

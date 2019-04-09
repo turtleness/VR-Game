@@ -17,6 +17,7 @@ TagManager:
   - BlueZone
   - Enemy
   - Spawner
+  - Feet
   layers:
   - Default
   - TransparentFX

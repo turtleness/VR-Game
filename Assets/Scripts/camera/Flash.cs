@@ -9,14 +9,15 @@ public class Flash : MonoBehaviour {
     public Light myLight;
     private int iterations = 0;
     public GameObject Playerhead;
-    public GameObject[] Enemies;
-    private GameObject[] EnemyList;
+    public List<GameObject> Enemies = new List<GameObject>();
     public EnemySpawner enemyspawner;
     private bool Picturetaken = false;
 
 
     // Use this for initialization
     void Start () {
+        // Enemies.Add
+        Enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
     }
     private void FixedUpdate()
     {
@@ -29,7 +30,6 @@ public class Flash : MonoBehaviour {
     {
         Picturetaken = false;
     }
-
 
     public void Firstbitoflight()
     {
@@ -47,10 +47,13 @@ public class Flash : MonoBehaviour {
                 RaycastHit Hit;
                 if (onScreen == true)
                 {
+                    print("onscreen");
                     if (Physics.Raycast(transform.position, item.transform.position - transform.position, out Hit, 100, layerMask))
                     {
+                        print("checking");
                         if (Hit.collider.tag == "Enemy")
                         {
+                            print("dead");
                             enemyspawner.RelocateEnemy(Hit.collider.gameObject);
                         }
                     }

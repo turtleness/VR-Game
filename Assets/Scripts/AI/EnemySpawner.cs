@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
 
-    public GameObject[] Enemys;
+    private GameObject[] Enemys;
 
     public Transform[] Spawnpoints;
+    public GameObject slime;
 
 	// Use this for initialization
 	void Start () {
+        Enemys = GameObject.FindGameObjectsWithTag("Enemy");
         SpawnEnemies();
 	}
 
@@ -31,7 +33,9 @@ public class EnemySpawner : MonoBehaviour {
     {
 
             int temp = Random.Range(0, 4);
-        print(temp);
+        
+        Instantiate(slime, TheEnemiesThatWereTakenAPictureOf.GetComponentInChildren<FeetObject>().gameObject.transform.position, new Quaternion());
+        print(TheEnemiesThatWereTakenAPictureOf.GetComponentInChildren<FeetObject>().gameObject.transform.position);
         TheEnemiesThatWereTakenAPictureOf.SetActive(false);
         TheEnemiesThatWereTakenAPictureOf.transform.position = Spawnpoints[temp].position;
         TheEnemiesThatWereTakenAPictureOf.GetComponent<Perspective>().ResetAI();

@@ -29,7 +29,8 @@ public class Movement : MonoBehaviour
     public float speed = 5.0f;
     SteamVR_TrackedObject trackedObj;
     private Vector3 playerpos;
-    public SteamVR_Input_Sources inputSource = SteamVR_Input_Sources.Any;
+    public SteamVR_Input_Sources RightHandSource = SteamVR_Input_Sources.RightHand;
+    public SteamVR_Input_Sources LeftHandSource = SteamVR_Input_Sources.LeftHand;
     public SteamVR_ActionSet actionSetdefault;
     public GameObject Flash;
 
@@ -42,7 +43,6 @@ public class Movement : MonoBehaviour
 
     public void KillPlayer(GameObject Enemy, GameObject EnemyFace,GameObject mainCamera)
     {
-        Enemy.GetComponent<SentryAI>().enabled = false;
        // Enemy.transform.position = gameObject.transform.position - new Vector3(1, 1, 1);
 
     }
@@ -131,65 +131,79 @@ public class Movement : MonoBehaviour
         //playerpos.y = (Terrain.activeTerrain.SampleHeight(gameObject.transform.position)+1);
         //gameObject.transform.position = playerpos;
 
-        if (SteamVR_Input._default.inActions.TurnRight.GetStateDown(inputSource))
+        Vector2 LeftTouchPad = (touchPadAction.GetAxis(LeftHandSource));
+        if (SteamVR_Input._default.inActions.TurnLeft.GetStateDown(LeftHandSource))
         {
-            transform.Rotate(0, 20, 0);
-            print("right pressed");
+            if (LeftTouchPad.x > 0.4f)
+            {
+                transform.Rotate(0, 10, 0);
+
+            }
+            else if (LeftTouchPad.x < -0.4f)
+            {
+                transform.Rotate(0, -10, 0);
+
+
+            }
+
         }
 
-        if (SteamVR_Input._default.inActions.TurnLeft.GetStateDown(inputSource))
-        {
-            transform.Rotate(0, -20, 0);
-        }
 
-        if (SteamVR_Input._default.inActions.GrabGrip.GetStateDown(inputSource))
+    
+
+   
+
+        
+
+
+        if (SteamVR_Input._default.inActions.GrabGrip.GetStateDown(LeftHandSource))
         {
             Flash.GetComponent<Flash>().Firstbitoflight();
         }
 
 
-        Vector2 touchpad = (touchPadAction.GetAxis(inputSource));
-        if (touchpad.y > 0.4f)
-        {
-            // move forward
-            Vector3 forward = CurrentMovementType.transform.forward;
-            forward.y = 0;
-            forward.Normalize();
+        Vector2 touchpad = (touchPadAction.GetAxis(RightHandSource));
+        // print(touchpad.x + "    " + touchpad.y);
 
-            rb.velocity = (forward * PlayerSpeed * Time.deltaTime);
-          //  rb.velocity.Normalize();
-        }
-        else if (touchpad.y < -0.4f)
-        {
-            // move backwards
-            Vector3 forward = CurrentMovementType.transform.forward;
-            forward.y = 0;
-            forward.Normalize();
-            rb.velocity = ((forward * PlayerSpeed * Time.deltaTime) * -1);
+        // move forward
+        //Vector3 forward = CurrentMovementType.transform.forward;
+        //forward.y = 0;
+        //forward.Normalize();
 
-        }
-        else if (touchpad.x > 0.4f)
-        {
-            //move left
-            Vector3 forward = CurrentMovementType.transform.right;
-            forward.y = 0;
-            forward.Normalize();
-            rb.velocity = ((forward * PlayerSpeed * Time.deltaTime));
+        Vector3 direction = new Vector3( PlayerSpeed * Time.deltaTime * touchpad.x,  0,PlayerSpeed *  Time.deltaTime * touchpad.y);
+        direction = transform.rotation * direction;
+        rb.velocity = direction ;
+        //  rb.velocity.Normalize();
 
-        }
-        else if (touchpad.x < -0.4f)
-        {
-            //move right
-            Vector3 forward = CurrentMovementType.transform.right;
-            forward.y = 0;
-            forward.Normalize();
-            rb.velocity = ((forward * PlayerSpeed * Time.deltaTime) * -1);
+        //else if (touchpad.y < -0.4f)
+        //{
+        //    // move backwards
+        //    Vector3 forward = CurrentMovementType.transform.forward;
+        //    forward.y = 0;
+        //    forward.Normalize();
+        //    rb.velocity = ((forward * PlayerSpeed * Time.deltaTime) * -1);
 
-        }
-        else
-        {
-            rb.velocity = new Vector3(0, 0, 0);
-        }
+        //}
+        //else if (touchpad.x > 0.4f)
+        //{
+        //    //move left
+        //    Vector3 forward = CurrentMovementType.transform.right;
+        //    forward.y = 0;
+        //    forward.Normalize();
+        //    rb.velocity = ((forward * PlayerSpeed * Time.deltaTime));
+
+        //}
+        //else if (touchpad.x < -0.4f)
+        //{
+        //    //move right
+        //    Vector3 forward = CurrentMovementType.transform.right;
+        //    forward.y = 0;
+        //    forward.Normalize();
+        //    rb.velocity = ((forward * PlayerSpeed * Time.deltaTime) * -1);
+
+        //}
+
+
     }
 
 

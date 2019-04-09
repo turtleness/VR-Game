@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{D9FA42A4-731D-CCD6-3395-289DC7972352}</ProjectGuid>
+    <ProjectGuid>{0C38EFCF-5512-2F54-CAB4-FCB7BB5E7829}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -65,6 +65,7 @@
     <Compile Include="Assets\Deform\MeshDeformer.cs" />
     <Compile Include="Assets\Deform\MeshDeformerInput.cs" />
     <Compile Include="Assets\Deform\RoundedCube.cs" />
+    <Compile Include="Assets\FeetObject.cs" />
     <Compile Include="Assets\ObjectTaker.cs" />
     <Compile Include="Assets\ReturnObject.cs" />
     <Compile Include="Assets\Scripts\AI\Aspect.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Assets\Scripts\ArtefactSysten\ArtefactStand.cs" />
     <Compile Include="Assets\Scripts\camera\Flash.cs" />
     <Compile Include="Assets\Scripts\camera\FlashlightFollow.cs" />
+    <Compile Include="Assets\Scripts\Combat\LifeForce.cs" />
     <Compile Include="Assets\Scripts\Controller\ControllerInit.cs" />
     <Compile Include="Assets\Scripts\Inventory\Holster.cs" />
     <Compile Include="Assets\Scripts\Movement\BlackFadeWhenTriggered.cs" />
@@ -87,6 +89,7 @@
     <Compile Include="Assets\Scripts\Movement\MovementTest.cs" />
     <Compile Include="Assets\Scripts\RandomStuff\BeltFollow.cs" />
     <Compile Include="Assets\Scripts\RandomStuff\Instructions.cs" />
+    <Compile Include="Assets\Scripts\RandomStuff\SinkSlime.cs" />
     <Compile Include="Assets\Scripts\Sound\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Sound\Sound.cs" />
     <Compile Include="Assets\Scripts\Tutorial\Tutorial.cs" />
@@ -273,19 +276,19 @@
     <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\SeeThru.shader" />
     <None Include="Assets\SteamVR\InteractionSystem\Readme_InteractionSystem.txt" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Kamal/VrGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/kamal/Vrgame1/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Kamal/VrGame/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/kamal/Vrgame1/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>C:/Kamal/VrGame/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+      <HintPath>C:/kamal/Vrgame1/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>C:/Kamal/VrGame/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>C:/kamal/Vrgame1/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>C:/Kamal/VrGame/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+      <HintPath>C:/kamal/Vrgame1/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Institutions/Gre/Apps/Unity2018.2/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -489,13 +492,13 @@
       <HintPath>C:/Institutions/Gre/Apps/Unity2018.2/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Valve.Newtonsoft.Json">
-      <HintPath>C:/Kamal/VrGame/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:/kamal/Vrgame1/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/ka8846r.STUDENT.000/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>C:/Users/ka8846r.STUDENT.001/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/ka8846r.STUDENT.000/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/ka8846r.STUDENT.001/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Institutions/Gre/Apps/Unity2018.2/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>

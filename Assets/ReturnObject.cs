@@ -7,6 +7,7 @@ public class ReturnObject : MonoBehaviour {
     private Quaternion originalRot;
     public float T = 1;
     private Light l;
+    public GameObject Triggerobject;
     // Use this for initialization
     void Start () {
         if (gameObject.GetComponentInChildren<Light>())
@@ -40,6 +41,17 @@ public class ReturnObject : MonoBehaviour {
             
     }
 
+
+
+
+    public void Disableobject()
+    {
+        Triggerobject.SetActive(false);
+    }
+    public void Enableobject()
+    {
+        Triggerobject.SetActive(true);
+    }
 
     public void AttachEasein ()
     {
