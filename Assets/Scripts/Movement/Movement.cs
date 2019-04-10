@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
     public GameObject ControllerLeft;
     public GameObject ControllerRight;
     private float sensitivityX = 1.5F;
-    private readonly int layerMask = 1 << 0;
+    private readonly int layerMask = 14 << 0;
     public float maxVelocityChange = 10.0f;
     public float speed = 5.0f;
     SteamVR_TrackedObject trackedObj;
@@ -33,6 +33,9 @@ public class Movement : MonoBehaviour
     public SteamVR_Input_Sources LeftHandSource = SteamVR_Input_Sources.LeftHand;
     public SteamVR_ActionSet actionSetdefault;
     public GameObject Flash;
+    public GameObject BodyCollider;
+    RaycastHit Hit;
+
 
 
     public void ChangeMovement(GameObject Objectchosen)
@@ -61,19 +64,41 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         CurrentPosition = transform;
-        RaycastHit Hit;
+
         // height checker
-        if (Physics.Raycast(HeightChecker.position, transform.TransformDirection(Vector3.down), out Hit, Mathf.Infinity, layerMask))
+        Height = BodyCollider.transform.position.y + 0.2f;                                                                                                             
+        if (Physics.Raycast(new Vector3 (BodyCollider.transform.position.x,Height,BodyCollider.transform.position.z),BodyCollider.transform.up *-1, out Hit,Mathf.Infinity, layerMask))
         {
+            print("touched");
+            Debug.DrawLine(new Vector3(BodyCollider.transform.position.x, Height, BodyCollider.transform.position.z), Hit.point, Color.yellow);
 
-            if (Hit.distance != 0.7f)
-            {
-                transform.position = new Vector3(transform.position.x, (Hit.point.y), transform.position.z);
-
-            }
 
         }
-        Debug.DrawLine(HeightChecker.position, Hit.point, Color.yellow);
+
+
+
+
+
+
+
+
+
+        //if (Physics.Raycast(HeightChecker.position, Vector3.down, out Hit, Mathf.Infinity, layerMask))
+        //{
+        //   
+        //    if (Vector3.Distance(Hit.point, HeightChecker.position) != 0.7f)
+        //    {
+        //        transform.position = new Vector3(transform.position.x, (Hit.point.y), transform.position.z);
+
+        //    }
+
+        //}
+
+
+
+
+
+
 
         //turn left when pressed on left controller
         Vector2 LeftTouchPad = (touchPadAction.GetAxis(LeftHandSource));
@@ -102,8 +127,11 @@ public class Movement : MonoBehaviour
 
         Vector2 touchpad = (touchPadAction.GetAxis(RightHandSource));
         Vector3 direction = new Vector3( PlayerSpeed * Time.deltaTime * touchpad.x,  0,PlayerSpeed *  Time.deltaTime * touchpad.y);
-        direction = CurrentMovementType.transform.rotation * direction;
-        rb.velocity = direction;
+
+        Quaternion rot = CurrentMovementType.transform.rotation;
+        rot.eulerAngles = new Vector3(Mathf.Clamp(transform.eulerAngles.x, -45, 10), rot.eulerAngles.y, Mathf.Clamp(transform.eulerAngles.z, -45, 45));
+        direction = rot * direction;
+        rb.velocity =  new Vector3(direction.normalized.x,rb.velocity.y,direction.normalized.z);
         }
 
 

@@ -55,7 +55,7 @@ public class ReturnObject : MonoBehaviour {
 
     public void AttachEasein ()
     {
-        if (transform.localPosition != originalPos || transform.localRotation != originalRot)
+        if (Vector3.Distance(transform.localPosition, originalPos) >= 0.02)
         {
             transform.localPosition = Vector3.Lerp(transform.localPosition, originalPos, Time.deltaTime * T);
             transform.localRotation = Quaternion.Lerp(transform.localRotation, originalRot, Time.deltaTime * T);
