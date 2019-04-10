@@ -61,6 +61,7 @@ public class ArtefactStand : MonoBehaviour {
         print("fucntion is being called");
         Collider[] hitColliders = Physics.OverlapSphere(centersocket.position, 1);
         int i = 0;
+
         while (i < hitColliders.Length)
         {
             if (hitColliders[i].gameObject.tag == "Artefact")
@@ -99,6 +100,12 @@ public class ArtefactStand : MonoBehaviour {
                 }
             }
             i++;
+
+        }
+        if (Socket1socketed == true && Socket2socketed == true && Socket3socketed == true && Socket4socketed == true)
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+            Application.Quit();
         }
     }
 

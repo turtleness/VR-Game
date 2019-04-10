@@ -35,7 +35,6 @@ public class EnemySpawner : MonoBehaviour {
             int temp = Random.Range(0, 4);
         
         Instantiate(slime, TheEnemiesThatWereTakenAPictureOf.GetComponentInChildren<FeetObject>().gameObject.transform.position, new Quaternion());
-        print(TheEnemiesThatWereTakenAPictureOf.GetComponentInChildren<FeetObject>().gameObject.transform.position);
         TheEnemiesThatWereTakenAPictureOf.SetActive(false);
         TheEnemiesThatWereTakenAPictureOf.transform.position = Spawnpoints[temp].position;
         TheEnemiesThatWereTakenAPictureOf.GetComponent<Perspective>().ResetAI();

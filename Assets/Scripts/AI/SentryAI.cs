@@ -32,6 +32,7 @@ public class SentryAI : MonoBehaviour
         Idle = true;
         anim = GetComponentInChildren<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        agent.stoppingDistance = 0.2f;
     }
 
     private void Update()
@@ -39,7 +40,7 @@ public class SentryAI : MonoBehaviour
         Debug.DrawLine(gameObject.transform.position, Originpoint);
         if (Idle)
         {
-            if (agent.remainingDistance <= 0.2)
+            if (agent.remainingDistance <= agent.stoppingDistance)
             {
                 PositionReached = true;
 
@@ -56,8 +57,9 @@ public class SentryAI : MonoBehaviour
         }
     }
 
-    private void ResetAI()
+    public void ResetAI()
     {
+        agent.stoppingDistance = 0.2f;
         CancelInvoke();
         Idle = true;
     }
@@ -78,6 +80,7 @@ public class SentryAI : MonoBehaviour
     public void PlayerDetected()
     {
         Idle = false;
+        agent.stoppingDistance = 2f;
         InvokeRepeating("GoToPlayer", 0.2f, 0.2f);
         InvokeRepeating("Checkdistance", 0.05f, 0.05f);
     }
@@ -99,6 +102,17 @@ public class SentryAI : MonoBehaviour
                 Instantiate(lifeforce, LifeForceTarget.transform.position + UnityEngine.Random.insideUnitSphere * 0.2f, new Quaternion()).GetComponent<LifeForce>().EnemyInstance = gameObject;
                 }
             }      
+    }
+
+    private void CheckdistanceFunctionTwo()
+    {
+        if (agent.remainingDistance <= agent.stoppingDistance)
+        {
+            if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+            {
+                PositionReached = true;
+            }
+        }
     }
 
 

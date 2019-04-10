@@ -120,7 +120,7 @@ public class Movement : MonoBehaviour
 
 
 
-        if (SteamVR_Input._default.inActions.TurnRight.GetStateDown(LeftHandSource))
+        if (SteamVR_Input._default.inActions.TurnRight.GetStateDown(RightHandSource))
         {
             Flash.GetComponent<Flash>().Firstbitoflight();
         }

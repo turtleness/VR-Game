@@ -47,13 +47,11 @@ public class Flash : MonoBehaviour {
                 RaycastHit Hit;
                 if (onScreen == true)
                 {
-                    print("onscreen");
                     if (Physics.Raycast(transform.position, item.transform.position - transform.position, out Hit, 100, layerMask))
                     {
-                        print("checking");
                         if (Hit.collider.tag == "Enemy")
                         {
-                            print("dead");
+                            Hit.collider.gameObject.GetComponent<SentryAI>().ResetAI();
                             enemyspawner.RelocateEnemy(Hit.collider.gameObject);
                         }
                     }
