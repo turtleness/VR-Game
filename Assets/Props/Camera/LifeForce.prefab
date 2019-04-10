@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4765829191210616}
   - component: {fileID: 114878479025330978}
   - component: {fileID: 96404432660946258}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: LifeForce
   m_TagString: Untagged
   m_Icon: {fileID: 0}

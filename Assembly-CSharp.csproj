@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\Controller\ControllerInit.cs" />
     <Compile Include="Assets\Scripts\Inventory\Holster.cs" />
     <Compile Include="Assets\Scripts\Movement\BlackFadeWhenTriggered.cs" />
+    <Compile Include="Assets\Scripts\Movement\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\Movement\InputTester.cs" />
     <Compile Include="Assets\Scripts\Movement\Movement.cs" />
     <Compile Include="Assets\Scripts\Movement\MovementTest.cs" />
