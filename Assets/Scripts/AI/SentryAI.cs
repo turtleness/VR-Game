@@ -64,18 +64,47 @@ public class SentryAI : MonoBehaviour
         Idle = true;
     }
 
-
-
+    public float range = 2.0f;
+    bool RandomPoint(out Vector3 result)
+    {
+        for (int i = 0; i < 30; i++)
+        {
+            Vector3 randomPoint = gameObject.transform.position + UnityEngine.Random.insideUnitSphere * MoveRadius;
+            NavMeshHit hit;
+            if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
+            {
+                result = hit.position;
+                
+                return true;
+            }
+        }
+        result = Vector3.zero;
+        return false;
+    }
 
     private void MovearoundIdle()
     {
-        Originpoint = gameObject.transform.position;
-        Originpoint.x += UnityEngine.Random.Range(-MoveRadius, MoveRadius);
-        Originpoint.z += UnityEngine.Random.Range(-MoveRadius, MoveRadius);
-        agent.destination = Originpoint;
+        Vector3 point;
+        if (RandomPoint(out point))
+        {
+            Originpoint = point;
+            Originpoint.y = 1;
 
+        }
+        agent.destination = Originpoint;
+        Invoke("RedoPath",1);
 
     }
+
+    private void RedoPath()
+    {
+        if (agent.remainingDistance > 4)
+        {
+            MovearoundIdle();
+        }
+    }
+
+
 
     public void PlayerDetected()
     {
