@@ -28,7 +28,7 @@ public class ReturnObject : MonoBehaviour {
 
     public void AttacheasiinDelay()
     {
-        Invoke("AttachEasein", 1);
+        Invoke("AttachEasein", 5);
     }
 
     public void enablecomponent()

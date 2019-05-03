@@ -36,6 +36,11 @@ public class Movement : MonoBehaviour
     public GameObject BodyCollider;
     RaycastHit Hit;
 
+    private bool camerapickedup = false;
+    public void ChangeCameraState()
+    {
+        camerapickedup = !camerapickedup;
+    }
 
 
     public void ChangeMovement(GameObject Objectchosen)
@@ -118,12 +123,17 @@ public class Movement : MonoBehaviour
         }
 
 
-
-
-        if (SteamVR_Input._default.inActions.TurnRight.GetStateDown(RightHandSource))
+        if (camerapickedup == true)
         {
-            Flash.GetComponent<Flash>().Firstbitoflight();
+            if (SteamVR_Input._default.inActions.TurnRight.GetStateDown(RightHandSource))
+            {
+
+                Flash.GetComponent<Flash>().Firstbitoflight();
+            }
+
         }
+
+
 
         Vector2 touchpad = (touchPadAction.GetAxis(RightHandSource));
         Vector3 direction = new Vector3( PlayerSpeed * Time.deltaTime * touchpad.x,  0,PlayerSpeed *  Time.deltaTime * touchpad.y);

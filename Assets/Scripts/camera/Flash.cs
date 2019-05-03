@@ -13,6 +13,7 @@ public class Flash : MonoBehaviour {
     public EnemySpawner enemyspawner;
     private bool Picturetaken = false;
     public float CameraBattery = 4;
+    public Tutorial Tut;
 
 
     // Use this for initialization
@@ -39,6 +40,7 @@ public class Flash : MonoBehaviour {
     }
 
 
+
     private void Resetpicturetaken()
     {
         Picturetaken = false;
@@ -49,10 +51,9 @@ public class Flash : MonoBehaviour {
 
         if (Picturetaken == false)
         {
+            Tut.UseCamera();
             if (CameraBattery != 0)
             {
-
-
                 Invoke("Resetpicturetaken", 3);
                 Picturetaken = true;
                 CameraBattery -= 25;
