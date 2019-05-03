@@ -12,6 +12,7 @@ public class Flash : MonoBehaviour {
     public List<GameObject> Enemies = new List<GameObject>();
     public EnemySpawner enemyspawner;
     private bool Picturetaken = false;
+    public float CameraBattery = 4;
 
 
     // Use this for initialization
@@ -23,7 +24,19 @@ public class Flash : MonoBehaviour {
     {
     }
 
+    public void PickupBattery(GameObject TheBattery)
+    {
+        if (CameraBattery == 4)
+        {
 
+        }
+        else
+        {
+            CameraBattery += 1;
+            Destroy(TheBattery);
+        }
+
+    }
 
 
     private void Resetpicturetaken()
@@ -36,34 +49,40 @@ public class Flash : MonoBehaviour {
 
         if (Picturetaken == false)
         {
-            Invoke("Resetpicturetaken", 3);
-            Picturetaken = true;
-
-            foreach (GameObject item in Enemies)
+            if (CameraBattery != 0)
             {
 
-                Vector3 screenPoint = gameObject.GetComponent<Camera>().WorldToViewportPoint(item.transform.position);
-                bool onScreen = screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
-                RaycastHit Hit;
-                if (onScreen == true)
+
+                Invoke("Resetpicturetaken", 3);
+                Picturetaken = true;
+                CameraBattery -= 25;
+
+                foreach (GameObject item in Enemies)
                 {
-                    if (Physics.Raycast(transform.position, item.transform.position - transform.position, out Hit, 100, layerMask))
+
+                    Vector3 screenPoint = gameObject.GetComponent<Camera>().WorldToViewportPoint(item.transform.position);
+                    bool onScreen = screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
+                    RaycastHit Hit;
+                    if (onScreen == true)
                     {
-                        if (Hit.collider.tag == "Enemy")
+                        if (Physics.Raycast(transform.position, item.transform.position - transform.position, out Hit, 100, layerMask))
                         {
-                            Hit.collider.gameObject.GetComponent<SentryAI>().ResetAI();
-                            enemyspawner.RelocateEnemy(Hit.collider.gameObject);
+                            if (Hit.collider.tag == "Enemy")
+                            {
+                                Hit.collider.gameObject.GetComponent<SentryAI>().ResetAI();
+                                enemyspawner.RelocateEnemy(Hit.collider.gameObject);
+                            }
                         }
                     }
                 }
+
+                iterations = 0;
+                myLight.enabled = !myLight.enabled;
+                Invoke("Secondbitoflight", minTime);
+
             }
 
-            iterations = 0;
-            myLight.enabled = !myLight.enabled;
-            Invoke("Secondbitoflight", minTime);
-
         }
-        
     }
     
     public void Secondbitoflight()

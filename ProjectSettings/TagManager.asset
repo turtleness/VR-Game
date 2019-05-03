@@ -18,6 +18,9 @@ TagManager:
   - Enemy
   - Spawner
   - Feet
+  - Downstairspoints
+  - Upstairspoints
+  - Cam
   layers:
   - Default
   - TransparentFX

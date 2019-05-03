@@ -2,31 +2,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemySpawner : MonoBehaviour {
 
     private GameObject[] Enemys;
 
     public Transform[] Spawnpoints;
+    public GameObject[] Upstairpoints;
+    public GameObject[] Downstairpoints;
     public GameObject slime;
-
-	// Use this for initialization
-	void Start () {
+    private int halfmark;
+    // Use this for initialization
+    void Start () {
+     //   Upstairpoints = GameObject.FindGameObjectsWithTag("Upstairspoints");
+     //  Downstairpoints = GameObject.FindGameObjectsWithTag("Downstairspoints");
         Enemys = GameObject.FindGameObjectsWithTag("Enemy");
-        SpawnEnemies();
+        halfmark = Mathf.FloorToInt((Enemys.Length / 2));
+        print(halfmark);
+      //  SpawnEnemies();
+
 	}
 
 
 
     private void SpawnEnemies()
     {
-        foreach (var Enemy in Enemys)
+        for (int i = 0; i < halfmark; i++)
         {
-            int temp = Random.Range(0, 4);
+            Enemys[i].SetActive(false);
+            int temp = Random.Range(0, Downstairpoints.Length -1);
+            Enemys[i].GetComponent<NavMeshAgent>().areaMask = 5;
+            Enemys[i].transform.position = Downstairpoints[temp].transform.position;
+            Enemys[i].SetActive(true);
 
-            Enemy.transform.position = Spawnpoints[temp].position;
+
 
         }
+        for (int x = halfmark; x < Enemys.Length; x++)
+        {
+            Enemys[x].SetActive(false);
+            int temp = Random.Range(0, Upstairpoints.Length -1);
+            Enemys[x].GetComponent<NavMeshAgent>().areaMask = 4;
+            Enemys[x].transform.position = Upstairpoints[temp].transform.position;
+            Enemys[x].SetActive(true);
+
+        }
+
     }
 
     public void RelocateEnemy(GameObject TheEnemiesThatWereTakenAPictureOf)

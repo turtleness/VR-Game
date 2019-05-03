@@ -88,11 +88,11 @@ public class SentryAI : MonoBehaviour
         if (RandomPoint(out point))
         {
             Originpoint = point;
-            Originpoint.y = 1;
+            //Originpoint.y = 1;
 
         }
         agent.destination = Originpoint;
-        Invoke("RedoPath",1);
+       // Invoke("RedoPath",1);
 
     }
 

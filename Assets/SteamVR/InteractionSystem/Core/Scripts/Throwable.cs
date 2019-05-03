@@ -168,22 +168,27 @@ namespace Valve.VR.InteractionSystem
         //-------------------------------------------------
         protected virtual void OnDetachedFromHand(Hand hand)
         {
+            if (true)
+            {
 
-            attached = false;
 
-            onDetachFromHand.Invoke();
-         //   GameObject.FindGameObjectWithTag("Controller").GetComponent<ControllerInit>().SomethingDetached(gameObject);
-            hand.HoverUnlock(null);
-            
-            rigidbody.interpolation = hadInterpolation;
+                onDetachFromHand.Invoke();
+                attached = false;
 
-            Vector3 velocity;
-            Vector3 angularVelocity;
 
-            GetReleaseVelocities(hand, out velocity, out angularVelocity);
+                //   GameObject.FindGameObjectWithTag("Controller").GetComponent<ControllerInit>().SomethingDetached(gameObject);
+                hand.HoverUnlock(null);
 
-            rigidbody.velocity = velocity;
-            rigidbody.angularVelocity = angularVelocity;
+                rigidbody.interpolation = hadInterpolation;
+
+                Vector3 velocity;
+                Vector3 angularVelocity;
+
+                GetReleaseVelocities(hand, out velocity, out angularVelocity);
+
+                rigidbody.velocity = velocity;
+                rigidbody.angularVelocity = angularVelocity;
+            }
         }
 
 

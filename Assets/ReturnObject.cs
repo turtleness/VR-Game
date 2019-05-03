@@ -8,8 +8,10 @@ public class ReturnObject : MonoBehaviour {
     public float T = 1;
     private Light l;
     public GameObject Triggerobject;
+    
     // Use this for initialization
     void Start () {
+        
         if (gameObject.GetComponentInChildren<Light>())
         {
             l = gameObject.GetComponentInChildren<Light>();
@@ -21,6 +23,7 @@ public class ReturnObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 	}
 
     public void AttacheasiinDelay()
@@ -42,15 +45,36 @@ public class ReturnObject : MonoBehaviour {
     }
 
 
+    private WaitForSeconds delay = new WaitForSeconds(0.2f);
+    IEnumerator BatteryDying (){
 
+        
+
+
+
+        yield return delay;
+    }
+
+
+
+    private bool campicedup;
 
     public void Disableobject()
     {
         Triggerobject.SetActive(false);
+        if (Triggerobject.CompareTag("Cam"))
+        {
+            campicedup = false;
+        }
     }
     public void Enableobject()
     {
         Triggerobject.SetActive(true);
+        if (Triggerobject.CompareTag("Cam"))
+        {
+            campicedup = true;
+            StartCoroutine("BatteryDying");
+        }
     }
 
     public void AttachEasein ()
