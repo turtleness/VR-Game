@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ArtefactStand : MonoBehaviour {
 
@@ -13,7 +14,7 @@ public class ArtefactStand : MonoBehaviour {
     public bool Socket3socketed = false;
     public bool Socket4socketed = false;
 
-
+    public UnityEvent EnableSkyBox;
 
     public Transform centersocket;
     public GameObject socketitem1;
@@ -104,8 +105,7 @@ public class ArtefactStand : MonoBehaviour {
         }
         if (Socket1socketed == true && Socket2socketed == true && Socket3socketed == true && Socket4socketed == true)
         {
-            UnityEditor.EditorApplication.isPlaying = false;
-            Application.Quit();
+            EnableSkyBox.Invoke();
         }
     }
 
