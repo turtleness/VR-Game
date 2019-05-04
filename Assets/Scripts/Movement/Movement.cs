@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using Valve.VR;
+using UnityEngine.Rendering.PostProcessing;
+using System.Collections;
 
 public class Movement : MonoBehaviour
 
@@ -35,6 +37,9 @@ public class Movement : MonoBehaviour
     public GameObject Flash;
     public GameObject BodyCollider;
     RaycastHit Hit;
+    public PostProcessVolume volume;
+    private Vignette vigneteLayer = null;
+    private WaitForSeconds delay = new WaitForSeconds(0.01f);
 
     private bool camerapickedup = false;
     public void ChangeCameraState()
@@ -58,10 +63,12 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
+        volume.profile.TryGetSettings(out vigneteLayer);
         actionSetdefault.ActivatePrimary();
         CurrentMovementType = ControllerRight;
         trackedObj = GetComponent<SteamVR_TrackedObject>();
         LastPosition = CurrentPosition;
+        StartCoroutine("Fade");
         rb = gameObject.GetComponent<Rigidbody>();
     }
 
@@ -132,17 +139,31 @@ public class Movement : MonoBehaviour
             }
 
         }
-
-
-
         Vector2 touchpad = (touchPadAction.GetAxis(RightHandSource));
-        Vector3 direction = new Vector3( PlayerSpeed * Time.deltaTime * touchpad.x,  0,PlayerSpeed *  Time.deltaTime * touchpad.y);
+        
+        if (touchpad.magnitude != 0)
+        {
+            print("reduced");
+            vigneteLayer.intensity.value += Mathf.Clamp(0.01f, 0, 0.5f);
+        }
+        else
+        {
+            vigneteLayer.intensity.value -= Mathf.Clamp(0.05f, 0, 0.5f);
 
+        }
+
+
+
+
+        Vector3 direction = new Vector3( PlayerSpeed * Time.deltaTime * touchpad.x,  0,PlayerSpeed *  Time.deltaTime * touchpad.y);
         Quaternion rot = CurrentMovementType.transform.rotation;
         rot.eulerAngles = new Vector3(Mathf.Clamp(transform.eulerAngles.x, -45, 10), rot.eulerAngles.y, Mathf.Clamp(transform.eulerAngles.z, -45, 45));
         direction = rot * direction;
         rb.velocity =  new Vector3(direction.normalized.x,rb.velocity.y,direction.normalized.z);
+
         }
+
+
 
 
 }
