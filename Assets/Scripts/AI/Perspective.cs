@@ -21,19 +21,22 @@ public class Perspective : Sense
         AI = gameObject.GetComponent<SentryAI>();
     }
 
-    // Update is called once per frame
-
     private void Update()
     {
         elapsedTime += Time.deltaTime;
         // Detect perspective sense if within the detection rate
-        if (elapsedTime >= detectionRate & detected == false)
+        if (AI.DetectedPlayer == false)
         {
-            elapsedTime = 0;
-            DetectPlayer();
+
+
+            if (elapsedTime >= detectionRate)
+            {
+                elapsedTime = 0;
+
+                DetectPlayer();
+            }
         }
     }
-
 
     public void ResetAI()
     {
@@ -42,9 +45,6 @@ public class Perspective : Sense
         AI.Idle = true;
     }
 
-
-        
-
     private void DetectPlayer()
     {
         RaycastHit hit;
@@ -52,11 +52,10 @@ public class Perspective : Sense
         float angleToPlayer = (Vector3.Angle(rayDirection, transform.forward));
         if (angleToPlayer >= -90 && angleToPlayer <= 90 & (Physics.Raycast(transform.position, rayDirection,out hit, ViewDistance)))
         {
-            if (hit.collider.tag == "Player")
+            if (hit.collider.CompareTag("Player"))
             {
-                detected = true;
+               // detected = true;
                 AI.PlayerDetected();
-
             }
 
         }

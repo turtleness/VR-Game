@@ -70,8 +70,8 @@ public class Flash : MonoBehaviour {
                         {
                             if (Hit.collider.tag == "Enemy")
                             {
-                                Hit.collider.gameObject.GetComponent<SentryAI>().ResetAI();
-                                enemyspawner.RelocateEnemy(Hit.collider.gameObject);
+                                MoveEnemyAway(Hit.collider.gameObject);
+                                                             
                             }
                         }
                     }
@@ -84,6 +84,12 @@ public class Flash : MonoBehaviour {
             }
 
         }
+    }
+
+    public void MoveEnemyAway(GameObject Enemyinstance)
+    {
+        Enemyinstance.GetComponent<SentryAI>().ResetAI();
+        enemyspawner.RelocateEnemy(Enemyinstance);
     }
     
     public void Secondbitoflight()
