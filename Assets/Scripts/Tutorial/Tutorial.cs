@@ -17,6 +17,7 @@ public class Tutorial : MonoBehaviour {
     public GameObject options;
     public GameObject Camera;
     public GameObject lighter;
+    public GameObject Blocker;
 
     private bool Tutorialfinished = false;
     private bool Lighterused = false;
@@ -35,6 +36,7 @@ public class Tutorial : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Blocker.SetActive(true);
         Invoke("EndTutorial",6);
         options.SetActive(false);
         lighter.SetActive(false);
@@ -101,6 +103,7 @@ public class Tutorial : MonoBehaviour {
         Tutorialfinished = true;
         lighter.SetActive(true);
         Camera.SetActive(true);
+        Blocker.SetActive(false);
     }
 
     public void NextText()

@@ -1,0 +1,251 @@
+fileFormatVersion: 2
+guid: b92c3c6348b39bf4ba5dc598f216b02f
+timeCreated: 1556133294
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: bone_tail1
+    100002: bone_tail10
+    100004: bone_tail11
+    100006: bone_tail12
+    100008: bone_tail2
+    100010: bone_tail3
+    100012: bone_tail4
+    100014: bone_tail5
+    100016: bone_tail6
+    100018: bone_tail7
+    100020: bone_tail8
+    100022: bone_tail9
+    100024: //RootNode
+    100026: Demon_body_low
+    100028: Demon_eyes_low
+    100030: demon_Head
+    100032: demon_Hips
+    100034: demon_HipsTranslation
+    100036: demon_LeftArm
+    100038: demon_LeftFoot
+    100040: demon_LeftForeArm
+    100042: demon_LeftHand
+    100044: demon_LeftLeg
+    100046: demon_LeftShoulder
+    100048: demon_LeftToeBase
+    100050: demon_LeftUpLeg
+    100052: demon_mesh
+    100054: demon_Neck
+    100056: demon_Neck1
+    100058: demon_Reference
+    100060: demon_RightArm
+    100062: demon_RightFoot
+    100064: demon_RightForeArm
+    100066: demon_RightHand
+    100068: demon_RightLeg
+    100070: demon_RightShoulder
+    100072: demon_RightToeBase
+    100074: demon_RightUpLeg
+    100076: demon_Spine
+    100078: demon_Spine1
+    100080: demon_Spine2
+    100082: index_L1
+    100084: index_L2
+    100086: index_L3
+    100088: index_L4
+    100090: index_R1
+    100092: index_R2
+    100094: index_R3
+    100096: index_R4
+    100098: middle_L1
+    100100: middle_L2
+    100102: middle_L3
+    100104: middle_L4
+    100106: middle_R1
+    100108: middle_R2
+    100110: middle_R3
+    100112: middle_R4
+    100114: pinky_L1
+    100116: pinky_L2
+    100118: pinky_L3
+    100120: pinky_L4
+    100122: pinky_R1
+    100124: pinky_R2
+    100126: pinky_R3
+    100128: pinky_R4
+    100130: thumb_L1
+    100132: thumb_L2
+    100134: thumb_L3
+    100136: thumb_L4
+    100138: thumb_R1
+    100140: thumb_R2
+    100142: thumb_R3
+    100144: thumb_R4
+    100146: wrist_L
+    100148: wrist_R
+    400000: bone_tail1
+    400002: bone_tail10
+    400004: bone_tail11
+    400006: bone_tail12
+    400008: bone_tail2
+    400010: bone_tail3
+    400012: bone_tail4
+    400014: bone_tail5
+    400016: bone_tail6
+    400018: bone_tail7
+    400020: bone_tail8
+    400022: bone_tail9
+    400024: //RootNode
+    400026: Demon_body_low
+    400028: Demon_eyes_low
+    400030: demon_Head
+    400032: demon_Hips
+    400034: demon_HipsTranslation
+    400036: demon_LeftArm
+    400038: demon_LeftFoot
+    400040: demon_LeftForeArm
+    400042: demon_LeftHand
+    400044: demon_LeftLeg
+    400046: demon_LeftShoulder
+    400048: demon_LeftToeBase
+    400050: demon_LeftUpLeg
+    400052: demon_mesh
+    400054: demon_Neck
+    400056: demon_Neck1
+    400058: demon_Reference
+    400060: demon_RightArm
+    400062: demon_RightFoot
+    400064: demon_RightForeArm
+    400066: demon_RightHand
+    400068: demon_RightLeg
+    400070: demon_RightShoulder
+    400072: demon_RightToeBase
+    400074: demon_RightUpLeg
+    400076: demon_Spine
+    400078: demon_Spine1
+    400080: demon_Spine2
+    400082: index_L1
+    400084: index_L2
+    400086: index_L3
+    400088: index_L4
+    400090: index_R1
+    400092: index_R2
+    400094: index_R3
+    400096: index_R4
+    400098: middle_L1
+    400100: middle_L2
+    400102: middle_L3
+    400104: middle_L4
+    400106: middle_R1
+    400108: middle_R2
+    400110: middle_R3
+    400112: middle_R4
+    400114: pinky_L1
+    400116: pinky_L2
+    400118: pinky_L3
+    400120: pinky_L4
+    400122: pinky_R1
+    400124: pinky_R2
+    400126: pinky_R3
+    400128: pinky_R4
+    400130: thumb_L1
+    400132: thumb_L2
+    400134: thumb_L3
+    400136: thumb_L4
+    400138: thumb_R1
+    400140: thumb_R2
+    400142: thumb_R3
+    400144: thumb_R4
+    400146: wrist_L
+    400148: wrist_R
+    4300000: Demon_body_low
+    4300002: Demon_eyes_low
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Demon_body_low
+    13700002: Demon_eyes_low
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: demon_body2
+    second: {fileID: 2100000, guid: 1200bc68f8dd7e945bf38bf35cc03183, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: demon_eyes1
+    second: {fileID: 2100000, guid: a6dbd361a4dcc6b448a6e0822aa2c6cd, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

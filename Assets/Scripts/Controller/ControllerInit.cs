@@ -7,10 +7,9 @@ public class ControllerInit : MonoBehaviour {
     public Material skyboxhell;
     public Animator ExplodingHouse;
     public GameObject Video;
-
+    public Animation Boss;
 	// Use this for initialization
 	void Start () {
-        RenderSettings.skybox = null;
         Video.SetActive(false);
 
     }
@@ -19,11 +18,17 @@ public class ControllerInit : MonoBehaviour {
         Video.SetActive(true);
         RenderSettings.skybox = skyboxhell;
         ExplodingHouse.SetTrigger("exploding");
+        Boss.Play();
+        RenderSettings.fog = false;
         
     }
 	
 	// Update is called once per frame
 	void Update () {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            EnableSkybox();
+        }
 		
 	}
 
