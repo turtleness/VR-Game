@@ -24,5 +24,11 @@ public class HealthBar : MonoBehaviour {
         healthFill.value = currentHealth / maxHealth;
     }
 
-    
+    public void ReduceHealth(int amount)
+    {
+        currentHealth -= amount;
+        healthFill.value = currentHealth / maxHealth;
+    }
+
+
 }

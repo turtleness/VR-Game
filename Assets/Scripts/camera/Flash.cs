@@ -15,11 +15,14 @@ public class Flash : MonoBehaviour {
     public float CameraBattery = 4;
     public Tutorial Tut;
 
+    public HealthBar healthbar;
 
     // Use this for initialization
     void Start () {
         // Enemies.Add
         Enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+
+
     }
     private void FixedUpdate()
     {
@@ -27,14 +30,15 @@ public class Flash : MonoBehaviour {
 
     public void PickupBattery(GameObject TheBattery)
     {
-        if (CameraBattery == 4)
+        if (CameraBattery >= 100)
         {
-
+            CameraBattery = 100;
         }
         else
         {
-            CameraBattery += 1;
-            Destroy(TheBattery);
+            CameraBattery += 25;
+            healthbar.ChangeHealth(25);
+            TheBattery.SetActive(false);
         }
 
     }
@@ -57,6 +61,7 @@ public class Flash : MonoBehaviour {
                 Invoke("Resetpicturetaken", 3);
                 Picturetaken = true;
                 CameraBattery -= 25;
+                healthbar.ReduceHealth(25);
 
                 foreach (GameObject item in Enemies)
                 {

@@ -66,7 +66,6 @@
     <Compile Include="Assets\Deform\MeshDeformerInput.cs" />
     <Compile Include="Assets\Deform\RoundedCube.cs" />
     <Compile Include="Assets\FeetObject.cs" />
-    <Compile Include="Assets\HealthBar.cs" />
     <Compile Include="Assets\ObjectTaker.cs" />
     <Compile Include="Assets\ReturnObject.cs" />
     <Compile Include="Assets\Scripts\AI\Aspect.cs" />
@@ -98,6 +97,7 @@
     <Compile Include="Assets\Scripts\UI\ActivateUI.cs" />
     <Compile Include="Assets\Scripts\UI\ButtonTransitioner.cs" />
     <Compile Include="Assets\Scripts\UI\ChangeScene.cs" />
+    <Compile Include="Assets\Scripts\UI\HealthBar.cs" />
     <Compile Include="Assets\Scripts\UI\Pointer.cs" />
     <Compile Include="Assets\Scripts\UI\VRInputModule.cs" />
     <Compile Include="Assets\Sound\Scripts\RandomSound.cs" />

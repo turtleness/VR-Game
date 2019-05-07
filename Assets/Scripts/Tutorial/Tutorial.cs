@@ -43,6 +43,7 @@ public class Tutorial : MonoBehaviour {
         tutorial.SetActive(true);
         MainText.text = ("Welcome to the VR Horror Game");
         Invoke("NextText",5);
+        Invoke("EndTutorial", 6);
 
     }
 

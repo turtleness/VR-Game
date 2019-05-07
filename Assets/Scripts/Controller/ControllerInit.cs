@@ -8,6 +8,7 @@ public class ControllerInit : MonoBehaviour {
     public Animator ExplodingHouse;
     public GameObject Video;
     public Animation Boss;
+    public GameObject Instructions;
 	// Use this for initialization
 	void Start () {
         Video.SetActive(false);
@@ -19,6 +20,7 @@ public class ControllerInit : MonoBehaviour {
         RenderSettings.skybox = skyboxhell;
         ExplodingHouse.SetTrigger("exploding");
         Boss.Play();
+        Instructions.SetActive(false);
         RenderSettings.fog = false;
         
     }

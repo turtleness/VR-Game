@@ -28,6 +28,7 @@ public class SentryAI : MonoBehaviour
     public NavMeshPath navMeshPath;
     public float maxfollowdistance = 15;
     public GameObject enemyHand;
+    public Flash CameraBattery;
 
     private void Start()
     {
@@ -129,6 +130,12 @@ public class SentryAI : MonoBehaviour
     private void SuckSoul()
     {
         Instantiate(lifeforce, LifeForceTarget.transform.position + UnityEngine.Random.insideUnitSphere * 0.2f, new Quaternion()).GetComponent<LifeForce>().EnemyInstance = enemyHand;
+        CameraBattery.CameraBattery -= 0.1f;
+        if (CameraBattery.CameraBattery <= 0)
+        {
+            print("Dead");
+            Application.Quit();
+        }
     }
 
 
