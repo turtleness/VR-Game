@@ -71,8 +71,5 @@ public class Perspective : Sense
         leftRayPoint.x += FieldOfViewLeft;
         Vector3 rightRayPoint = frontRayPoint;
         rightRayPoint.x += FieldOfViewRight;
-        Debug.DrawLine(transform.position, frontRayPoint, Color.green);
-        Debug.DrawLine(transform.position, leftRayPoint, Color.green);
-        Debug.DrawLine(transform.position, rightRayPoint, Color.green);
     }
 }

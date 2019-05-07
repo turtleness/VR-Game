@@ -37,8 +37,7 @@ public class Flash : MonoBehaviour {
         else
         {
             CameraBattery += 25;
-            healthbar.ChangeHealth(25);
-            TheBattery.SetActive(false);
+            healthbar.ChangeHealth(25);        
         }
 
     }

@@ -40,6 +40,7 @@ public class Movement : MonoBehaviour
     public PostProcessVolume volume;
     private Vignette vigneteLayer = null;
     private WaitForSeconds delay = new WaitForSeconds(0.01f);
+    private float tempvig;
 
     private bool camerapickedup = false;
     public void ChangeCameraState()
@@ -80,7 +81,6 @@ public class Movement : MonoBehaviour
         Height = BodyCollider.transform.position.y + 0.2f;                                                                                                             
         if (Physics.Raycast(new Vector3 (BodyCollider.transform.position.x,Height,BodyCollider.transform.position.z),BodyCollider.transform.up *-1, out Hit,Mathf.Infinity, layerMask))
         {
-            print("touched");
             Debug.DrawLine(new Vector3(BodyCollider.transform.position.x, Height, BodyCollider.transform.position.z), Hit.point, Color.yellow);
 
 
@@ -139,14 +139,17 @@ public class Movement : MonoBehaviour
 
         }
         Vector2 touchpad = (touchPadAction.GetAxis(RightHandSource));
-        
-        if (touchpad.x != 0 || touchpad.y != 0)
+        if ((touchpad.x != 0 || touchpad.y != 0) & tempvig <= 0.5f)
         {
-            vigneteLayer.intensity.value += Mathf.Clamp(0.01f, 0, 0.5f);
+            tempvig += 0.05f;
+            Mathf.Clamp(tempvig, 0, 0.7f);
+            vigneteLayer.intensity.value = tempvig;
         }
-        else
+        else if (tempvig >= 0)
         {
-            vigneteLayer.intensity.value -= Mathf.Clamp(0.05f, 0, 0.5f);
+            tempvig -= 0.05f;
+            Mathf.Clamp(tempvig, 0, 0.7f);
+            vigneteLayer.intensity.value = tempvig;
 
         }
 
