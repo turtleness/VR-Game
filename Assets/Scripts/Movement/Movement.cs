@@ -68,7 +68,6 @@ public class Movement : MonoBehaviour
         CurrentMovementType = ControllerRight;
         trackedObj = GetComponent<SteamVR_TrackedObject>();
         LastPosition = CurrentPosition;
-        StartCoroutine("Fade");
         rb = gameObject.GetComponent<Rigidbody>();
     }
 
@@ -141,9 +140,8 @@ public class Movement : MonoBehaviour
         }
         Vector2 touchpad = (touchPadAction.GetAxis(RightHandSource));
         
-        if (touchpad.magnitude != 0)
+        if (touchpad.x != 0 || touchpad.y != 0)
         {
-            print("reduced");
             vigneteLayer.intensity.value += Mathf.Clamp(0.01f, 0, 0.5f);
         }
         else

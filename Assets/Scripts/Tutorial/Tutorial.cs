@@ -37,11 +37,9 @@ public class Tutorial : MonoBehaviour {
     // Use this for initialization
     void Start () {
         Blocker.SetActive(true);
-        Invoke("EndTutorial",6);
         options.SetActive(false);
         lighter.SetActive(false);
         Camera.SetActive(false);
-        // Invoke("EndTutorial", 5f);
         tutorial.SetActive(true);
         MainText.text = ("Welcome to the VR Horror Game");
         Invoke("NextText",5);

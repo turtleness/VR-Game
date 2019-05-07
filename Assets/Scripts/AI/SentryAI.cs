@@ -27,6 +27,7 @@ public class SentryAI : MonoBehaviour
     public float MoveRadius = 5f;
     public NavMeshPath navMeshPath;
     public float maxfollowdistance = 15;
+    public GameObject enemyHand;
 
     private void Start()
     {
@@ -127,13 +128,12 @@ public class SentryAI : MonoBehaviour
 
     private void SuckSoul()
     {
-        Instantiate(lifeforce, LifeForceTarget.transform.position + UnityEngine.Random.insideUnitSphere * 0.2f, new Quaternion()).GetComponent<LifeForce>().EnemyInstance = gameObject;
+        Instantiate(lifeforce, LifeForceTarget.transform.position + UnityEngine.Random.insideUnitSphere * 0.2f, new Quaternion()).GetComponent<LifeForce>().EnemyInstance = enemyHand;
     }
 
 
     private void Checkdistance()
     {
-        print(agent.remainingDistance);
         if (agent.remainingDistance <= agent.stoppingDistance)
             {
                 if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)

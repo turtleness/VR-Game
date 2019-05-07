@@ -75914,6 +75914,7 @@ MonoBehaviour:
   touchPadAction: {fileID: 11400000, guid: 664529030dec9814a9d90b70050f4f1c, type: 2}
   TurnRight: {fileID: 11400000, guid: 0cb26a11471f7874aa509ee6716225ef, type: 2}
   TurnLeft: {fileID: 11400000, guid: cb7a0a070b8859942b3ca825358dd7fb, type: 2}
+  CameraShot: {fileID: 0}
   PlayerSpeed: 140
   HeightChecker: {fileID: 4253034943900680}
   Height: 0.8
@@ -75924,8 +75925,12 @@ MonoBehaviour:
   ControllerRight: {fileID: 1066278408427852}
   maxVelocityChange: 10
   speed: 10
-  inputSource: 0
-  grabPinch: {fileID: 0}
+  RightHandSource: 2
+  LeftHandSource: 1
+  actionSetdefault: {fileID: 0}
+  Flash: {fileID: 0}
+  BodyCollider: {fileID: 0}
+  volume: {fileID: 0}
 --- !u!114 &114272536035061702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76111,20 +76116,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f8ce3ab19ef554bbbaab0d5e06dfaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points:
-  - {fileID: 4645441173025268}
-  - {fileID: 4998222787941420}
-  - {fileID: 4394563637343036}
-  - {fileID: 4903475786935816}
   agent: {fileID: 195665883773430578}
   Player: {fileID: 1206054281584518}
+  MainCam: {fileID: 0}
+  lifeforce: {fileID: 0}
+  LifeForceTarget: {fileID: 0}
   Idle: 0
-  Patrolling: 0
+  ApproachPlayer: 0
   DetectedPlayer: 0
   NoticedPlayer: 0
   stoppingDistance: 0.5
   RotationSpeed: 2
   anim: {fileID: 0}
+  MoveToplayer: 0
+  MoveRadius: 5
+  maxfollowdistance: 15
+  enemyHand: {fileID: 0}
 --- !u!114 &114357202744631628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76447,6 +76454,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Holster: {fileID: 1003217442190954}
+  skyboxhell: {fileID: 0}
+  ExplodingHouse: {fileID: 0}
+  Video: {fileID: 0}
+  Boss: {fileID: 0}
 --- !u!114 &114482579649417706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76539,6 +76550,11 @@ MonoBehaviour:
   Socket2socketed: 0
   Socket3socketed: 0
   Socket4socketed: 0
+  EnableSkyBox:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   centersocket: {fileID: 4317900647168704}
   socketitem1: {fileID: 1919747438529796}
   socketitem2: {fileID: 1292449702377058}
@@ -76569,20 +76585,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f8ce3ab19ef554bbbaab0d5e06dfaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points:
-  - {fileID: 4645441173025268}
-  - {fileID: 4998222787941420}
-  - {fileID: 4394563637343036}
-  - {fileID: 4903475786935816}
   agent: {fileID: 195590036293769632}
   Player: {fileID: 1206054281584518}
+  MainCam: {fileID: 0}
+  lifeforce: {fileID: 0}
+  LifeForceTarget: {fileID: 0}
   Idle: 0
-  Patrolling: 0
+  ApproachPlayer: 0
   DetectedPlayer: 0
   NoticedPlayer: 0
   stoppingDistance: 0.5
   RotationSpeed: 2
   anim: {fileID: 0}
+  MoveToplayer: 0
+  MoveRadius: 5
+  maxfollowdistance: 15
+  enemyHand: {fileID: 0}
 --- !u!114 &114539792266104490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76750,20 +76768,12 @@ MonoBehaviour:
   arraypointer: -1
   bluezone: {fileID: 1131806940699680}
   tutorial: {fileID: 1788444991974604}
-  flashlight: {fileID: 1208242917152886}
   instructions: {fileID: 1523238822160906}
   altar: {fileID: 1559742650302252}
   options: {fileID: 1994774610067560}
-  touchPadAction: {fileID: 11400000, guid: 664529030dec9814a9d90b70050f4f1c, type: 2}
-  TurnRight: {fileID: 11400000, guid: 0cb26a11471f7874aa509ee6716225ef, type: 2}
-  TurnLeft: {fileID: 11400000, guid: cb7a0a070b8859942b3ca825358dd7fb, type: 2}
-  PlayerSpeed: 160
-  HeightChecker: {fileID: 4253034943900680}
-  Height: 1
-  StepSpeed: 1
-  Head: {fileID: 1736249016800114}
-  maxVelocityChange: 10
-  speed: 10
+  Camera: {fileID: 0}
+  lighter: {fileID: 0}
+  Blocker: {fileID: 0}
 --- !u!114 &114633559010417660
 MonoBehaviour:
   m_ObjectHideFlags: 1
